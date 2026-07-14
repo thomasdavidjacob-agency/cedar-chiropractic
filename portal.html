@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Portal | Cedar Chiropractic Physicians</title>
+<meta name="description" content="Access the Cedar Chiropractic Physicians patient portal powered by ChiroTouch — book appointments, complete forms, view records, and pay your bill securely.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar__meta"><a href="tel:+15035550142">📞 (503) 555-0142</a><span class="dot hide-sm">•</span><span class="hide-sm">Mon–Fri 8am–6pm · Sat 9am–1pm</span></div>
+    <div class="topbar__meta"><a href="portal.html">Patient Portal</a><span class="dot">•</span><a href="contact.html">New Patients Welcome</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#17275c"/><path d="M20 8c0 6-4 8-4 13a4 4 0 108 0c0-5-4-7-4-13z" fill="#6f8fce"/><path d="M20 30c5 0 8-3 9-7-4 1-6 3-9 3s-5-2-9-3c1 4 4 7 9 7z" fill="#2549d8"/></svg>
+      <span>Cedar Chiropractic<small>Physicians</small></span>
+    </a>
+    <nav>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="new-patients.html">New Patients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a href="portal.html" class="btn btn--ghost active">Patient Portal</a>
+      <a href="contact.html" class="btn btn--primary">Book Appointment</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow" style="margin-inline:auto">Patient Portal</span>
+    <h1>Your care, anytime you need it</h1>
+    <p class="lead" style="margin-inline:auto">Securely manage your appointments, forms, records, and payments through our ChiroTouch patient portal.</p>
+    <p class="crumbs"><a href="index.html">Home</a> / Patient Portal</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="portal-card reveal">
+      <div>
+        <span class="pill">🔒 Secure &amp; HIPAA-compliant</span>
+        <h2 style="margin-top:18px">Sign in to the ChiroTouch portal</h2>
+        <p>Our patient portal is powered by ChiroTouch, a trusted platform used by thousands of chiropractic practices. Click below to log in or activate your account — you'll be taken to the secure ChiroTouch sign-in page.</p>
+        <div class="hero__actions">
+          <!-- TODO: replace with the practice's real ChiroTouch portal URL (e.g. https://portal.chirotouch.com/... ) -->
+          <a href="https://www.chirotouch.com/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Log in to Portal ↗</a>
+          <a href="https://www.chirotouch.com/" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Activate account ↗</a>
+        </div>
+        <p class="form-note">First time here? Check your email for an activation invite from our office, or call <a href="tel:+15035550142">(503) 555-0142</a> and we'll get you set up.</p>
+      </div>
+      <div class="portal-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 018 0v3" stroke-linecap="round"/><circle cx="12" cy="15.5" r="1.6"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:52px">
+      <span class="eyebrow" style="margin-inline:auto">What you can do</span>
+      <h2>Everything in one secure place</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg></div><h3>Book &amp; reschedule</h3><p>Manage your appointments 24/7 without picking up the phone.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round"/></svg></div><h3>Complete forms</h3><p>Fill out intake and health-history paperwork before your visit.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg></div><h3>View your records</h3><p>Access your visit history, care plans, and treatment notes.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20" /></svg></div><h3>Pay online</h3><p>View statements and settle your balance securely, anytime.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow center reveal">
+    <span class="eyebrow" style="margin-inline:auto">Need a hand?</span>
+    <h2>We're here to help</h2>
+    <p class="lead" style="margin-inline:auto">Trouble logging in or activating your account? Our team is happy to walk you through it.</p>
+    <div class="hero__actions" style="justify-content:center;margin-top:24px">
+      <a href="tel:+15035550142" class="btn btn--primary btn--lg">📞 (503) 555-0142</a>
+      <a href="contact.html" class="btn btn--ghost btn--lg">Send us a message</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="brand" style="color:#fff"><svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#6f8fce"/><path d="M20 8c0 6-4 8-4 13a4 4 0 108 0c0-5-4-7-4-13z" fill="#101b45"/><path d="M20 30c5 0 8-3 9-7-4 1-6 3-9 3s-5-2-9-3c1 4 4 7 9 7z" fill="#2549d8"/></svg><span>Cedar Chiropractic<small>Physicians</small></span></div>
+        <p>Gentle, whole-person chiropractic care in the heart of Portland. Helping you move, feel, and live better since 2010.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="about.html">About Dr. Fred</a></li><li><a href="new-patients.html">New Patients</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Patients</h4><ul><li><a href="portal.html">Patient Portal</a></li><li><a href="contact.html">Book Appointment</a></li><li><a href="new-patients.html">Insurance</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>1234 Cedar Ave, Suite 200<br>Portland, OR 97201</li><li><a href="tel:+15035550142">(503) 555-0142</a></li><li><a href="mailto:hello@cedarchiro.com">hello@cedarchiro.com</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Cedar Chiropractic Physicians. All rights reserved.</span><span>Portland, Oregon · Doctors of Chiropractic</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
