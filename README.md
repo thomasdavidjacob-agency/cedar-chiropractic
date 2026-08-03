@@ -19,7 +19,7 @@ A skeleton build for Dr. Fred's chiropractic practice. Static HTML/CSS/JS, deplo
 Real NAP, hours, logo, photos (Fred, Bobbie, office), and testimonials are all in place.
 Remaining:
 - **Resend:** verify a sending domain in Resend, then set `RESEND_API_KEY` (Vercel env) and real `TO_EMAIL` / `FROM_EMAIL` in `api/lead.js`. Until then the form no-ops gracefully.
-- **Booking / portal:** wire the real **ChiroSpring** online scheduler + patient-portal URLs once the ChiroTouch → ChiroSpring migration is live. Booking CTAs currently route to the contact form; `portal.html` is EHR-neutral.
+- **Booking / portal:** wire Fred's **Jane** online-booking URL + patient login (MyJane) once his Jane account is set up. Booking CTAs currently route to the contact form; `portal.html` is EHR-neutral. (EHR decision history: ChiroTouch → ChiroSpring → **Jane**.)
 - **Blog:** replace the single sample article with real posts + thumbnails.
 - **Reviews:** confirm current Google rating/count if we want to display numbers (currently linked, not hardcoded).
 - **Domain:** point cedar-chiro.com at Vercel (GoDaddy DNS) when ready to go live.

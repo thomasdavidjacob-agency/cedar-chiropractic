@@ -48,12 +48,12 @@ Google reviews by making it effortless and asking every patient.
 > "We'd love your feedback — scan this code to leave a quick Google review."
 
 ## Automation workflow
-1. **Recommended engine — ChiroSpring native.** Once Fred is on ChiroSpring, use its
-   built-in patient-engagement / review-request feature: auto-send the SMS/email above
-   ~2–24 hrs after a **completed** appointment. Keeps patient data inside the EHR
-   (HIPAA-friendly) and requires no middleware. *(Confirm ChiroSpring includes review
-   requests; if not, use its appointment-reminder/messaging tool or a dedicated
-   HIPAA-compliant review service.)*
+1. **Recommended engine — Jane native.** Once Fred is on Jane, use Jane's automated
+   patient emails to send the review link ~2–24 hrs after a **completed** appointment
+   (Jane triggers follow-up/"thank you" emails; SMS is an add-on). Keeps patient data
+   inside Jane (HIPAA-friendly; Jane provides its own BAA) and needs no middleware.
+   *(If Jane's automated email can't carry a custom review link on the cadence we want,
+   fall back to a dedicated HIPAA-compliant review-request tool or the manual flow below.)*
 2. **Cadence:** one request after the visit; optional single reminder 3–4 days later if
    no review. Never more than that.
 3. **Interim (works today, pre-ChiroSpring):** front desk (Bobbie) hands the QR card at
@@ -62,5 +62,5 @@ Google reviews by making it effortless and asking every patient.
 
 ## Open items
 - [ ] Official Google review short link from GBP (Phuong) → finalize link, QR, templates.
-- [ ] Confirm the auto-send engine (ChiroSpring native vs. tool) — gated on ChiroSpring setup.
+- [ ] Confirm the auto-send engine (Jane automated emails vs. a review tool) — gated on Jane setup.
 - [ ] Confirm patient texting consent is captured at intake.
