@@ -155,7 +155,7 @@ p { margin: 0 0 1.1em; }
 .brand small { display: block; font-family: var(--sans); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-top: 2px; }
 
 .nav__links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.nav__links a { font-weight: 500; color: var(--ink); font-size: .96rem; }
+.nav__links a { font-weight: 500; color: var(--ink); font-size: .96rem; white-space: nowrap; }
 .nav__links a:hover, .nav__links a.active { color: var(--cedar); }
 .nav__cta { display: flex; align-items: center; gap: 14px; }
 
