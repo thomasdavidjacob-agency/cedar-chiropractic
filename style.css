@@ -1,23 +1,23 @@
 /* =========================================================
-   Cedar Chiropractic Physicians — Design System
-   Warm, natural, health-forward. Cedar green + sage + cream.
+   Cedar Chiropractic & Auto Injury — Design System
+   Brand palette from the logo: deep navy + sage green + warm cream.
    ========================================================= */
 
 :root {
-  /* Palette — royal blue family */
-  --forest: #17275c;      /* deep navy — headings, footer, dark sections */
-  --forest-2: #101b45;    /* darker navy */
-  --sage: #6f8fce;        /* mid / steel blue */
-  --sage-100: #e6edfa;    /* soft blue wash */
-  --sage-50: #f1f5fd;
-  --cream: #f4f7fc;       /* page background (cool light) */
+  /* Palette — from the Cedar logo (navy + sage green) */
+  --forest: #0a325a;      /* deep navy — headings, footer, dark sections */
+  --forest-2: #06223f;    /* darker navy */
+  --sage: #50826e;        /* logo sage-green — soft accents / gradients */
+  --sage-100: #e3ede8;    /* soft green wash */
+  --sage-50: #f1f6f3;     /* lightest green tint */
+  --cream: #f6f4ee;       /* warm neutral page background */
   --cream-2: #ffffff;     /* card / raised surfaces */
-  --cedar: #2549d8;       /* royal blue — primary CTA / accent */
-  --cedar-dark: #1c39ad;
-  --gold: #e0a63b;        /* warm gold — small highlights, stars */
-  --ink: #1b2233;         /* body text (cool dark) */
-  --muted: #57617a;       /* secondary text */
-  --line: #dbe3f1;        /* hairline borders */
+  --cedar: #3f7358;       /* sage-green — primary CTA / accent (AA-safe) */
+  --cedar-dark: #30583f;
+  --gold: #d99a2b;        /* warm gold — small highlights, stars */
+  --ink: #1f2a2e;         /* body text (warm dark) */
+  --muted: #566b62;       /* secondary text (muted green-grey) */
+  --line: #dde5df;        /* hairline borders */
 
   /* Type */
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
@@ -117,7 +117,7 @@ p { margin: 0 0 1.1em; }
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--primary { background: var(--cedar); color: #fff; box-shadow: 0 8px 22px rgba(37,73,216,.30); }
+.btn--primary { background: var(--cedar); color: #fff; box-shadow: 0 8px 22px rgba(63,115,88,.30); }
 .btn--primary:hover { background: var(--cedar-dark); color: #fff; }
 .btn--forest { background: var(--forest); color: #fff; }
 .btn--forest:hover { background: var(--forest-2); color: #fff; }
@@ -149,7 +149,9 @@ p { margin: 0 0 1.1em; }
 .nav .container { display: flex; align-items: center; justify-content: space-between; min-height: var(--nav-h); gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.28rem; color: var(--forest); font-weight: 600; letter-spacing: -.01em; }
 .brand:hover { color: var(--forest); }
-.brand__mark { width: 38px; height: 38px; flex: none; }
+.brand__mark { width: 40px; height: auto; flex: none; }
+.footer__logo { width: 150px; height: auto; display: block; }
+.brand span { white-space: nowrap; }
 .brand small { display: block; font-family: var(--sans); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-top: 2px; }
 
 .nav__links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
@@ -206,6 +208,7 @@ p { margin: 0 0 1.1em; }
 .hero__badge .ring { width: 44px; height: 44px; border-radius: 50%; background: var(--sage-100); display: grid; place-items: center; color: var(--forest); flex: none; }
 .hero__badge small { display: block; color: var(--muted); font-size: .8rem; }
 .hero__badge strong { font-family: var(--serif); color: var(--forest); font-size: 1.05rem; }
+.hero__photo img, .split__media img, .about-media img, .post-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* Placeholder image blocks (swap for real photos) */
 .ph {
@@ -357,6 +360,7 @@ p { margin: 0 0 1.1em; }
 .footer .brand { color: #fff; margin-bottom: 16px; }
 .footer .brand small { color: var(--sage); }
 .footer p { font-size: .92rem; color: #a9b8aa; }
+.footer__social { margin-top: 8px; font-size: .92rem; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .84rem; color: #93a494; }
 
 /* ---------- Reveal on scroll ---------- */

@@ -12,3 +12,13 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# Large source originals — kept locally, not deployed.
+# The web-optimized versions (fred.jpg, bobbie.jpg, entrance.jpg, waiting-room.jpg,
+# treatment-room.jpg, logo-white.png, mark.png, favicon.png, apple-touch-icon.png) are used.
+images/Fred.png
+images/Bobbie.png
+images/Logo.png
+images/mark-white.png
+images/office_*.jpg
+favicon.svg

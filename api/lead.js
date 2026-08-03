@@ -2,8 +2,8 @@
 // Set RESEND_API_KEY in your Vercel project env vars before deploying.
 // Update TO_EMAIL / FROM_EMAIL to the practice's real addresses.
 
-const TO_EMAIL = 'front-desk@cedarchiro.com';        // where leads are received
-const FROM_EMAIL = 'website@cedarchiro.com';         // must be a verified Resend domain sender
+const TO_EMAIL = 'cedarchiro@cedar-chiro.com';        // where leads are received
+const FROM_EMAIL = 'website@cedar-chiro.com';        // must be a verified Resend domain sender (verify cedar-chiro.com in Resend)
 const SUBJECT_PREFIX = 'New Appointment Request';
 
 export default async function handler(req, res) {

@@ -15,13 +15,14 @@ A skeleton build for Dr. Fred's chiropractic practice. Static HTML/CSS/JS, deplo
 | `blog-post.html` | Article template |
 | `api/lead.js` | Serverless form handler (Resend) |
 
-## Placeholders to replace (search & swap)
-- **Phone:** `(503) 555-0142` / `tel:+15035550142`
-- **Email:** `hello@cedarchiro.com`, and in `api/lead.js` the `TO_EMAIL` / `FROM_EMAIL`
-- **Address:** `1234 Cedar Ave, Suite 200, Portland, OR 97201` (and the map `bbox` in `contact.html`)
-- **ChiroTouch portal URL:** in `portal.html`, the two `https://www.chirotouch.com/` links (marked with a TODO) → the practice's real ChiroTouch portal/login URL
-- **Photos:** every `.ph` placeholder block (hero, Dr. Fred, team, blog thumbnails) → real images
-- **Copy:** review the "since 2010 / 15+ years / 4.9★ / 300+ reviews" claims and make them accurate
+## Still needs the client (before go-live)
+Real NAP, hours, logo, photos (Fred, Bobbie, office), and testimonials are all in place.
+Remaining:
+- **Resend:** verify a sending domain in Resend, then set `RESEND_API_KEY` (Vercel env) and real `TO_EMAIL` / `FROM_EMAIL` in `api/lead.js`. Until then the form no-ops gracefully.
+- **Booking / portal:** wire the real **ChiroSpring** online scheduler + patient-portal URLs once the ChiroTouch → ChiroSpring migration is live. Booking CTAs currently route to the contact form; `portal.html` is EHR-neutral.
+- **Blog:** replace the single sample article with real posts + thumbnails.
+- **Reviews:** confirm current Google rating/count if we want to display numbers (currently linked, not hardcoded).
+- **Domain:** point cedar-chiro.com at Vercel (GoDaddy DNS) when ready to go live.
 
 ## Local preview
 Any static server works, e.g.:
@@ -37,6 +38,6 @@ The form posts to `/api/lead`, which only runs under Vercel (`vercel dev`) — l
 4. Point the practice's domain at the project.
 
 ## Design notes
-- **Palette:** deep cedar green `#2f4a3a`, sage `#7d9b86`, warm cream `#f8f5ef`, cedar/terracotta accent `#b5673f`.
+- **Palette:** deep navy `#0a325a`, sage green `#50826e`, warm cream `#f6f4ee`, green CTA accent `#3f7358` — sampled from the Cedar logo (`images/Logo.png`).
 - **Type:** Fraunces (headings) + Inter (body), loaded from Google Fonts.
 - All design tokens live at the top of `style.css` under `:root`.

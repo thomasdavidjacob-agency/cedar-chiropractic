@@ -22,6 +22,15 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function (el, i) { el.style.transitionDelay = (Math.min(i % 3, 2) * 90) + 'ms'; io.observe(el); });
+    // Safety net: immediately reveal anything already in the viewport on load
+    // (IntersectionObserver's initial callback can miss above-the-fold elements).
+    requestAnimationFrame(function () {
+      els.forEach(function (el) {
+        if (el.getBoundingClientRect().top < (window.innerHeight || document.documentElement.clientHeight)) {
+          el.classList.add('in'); io.unobserve(el);
+        }
+      });
+    });
   } else {
     els.forEach(function (el) { el.classList.add('in'); });
   }
