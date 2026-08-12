@@ -10,10 +10,13 @@ publish ONE new post from the queue below, following every rule here. This file 
 3. Write ONE new blog post as a **root-level** HTML file named `<slug>.html`.
 4. Add its card to the top of the grid in `blog.html` (newest first) and to the home
    blog preview in `index.html` if it's an auto-injury post (replace the oldest preview card).
-5. Mark that topic `[x]` in the Queue and set its "published" date.
-6. `git add -A && git commit` (clear message) `&& git push origin main`. The push
+5. Add the new post to `sitemap.xml`: insert a `<url>` entry at the TOP of the
+   "Blog posts" section (right after the comment), using today's date as `<lastmod>`:
+   `  <url><loc>https://www.cedar-chiro.com/<slug>.html</loc><lastmod>YYYY-MM-DD</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>`
+6. Mark that topic `[x]` in the Queue and set its "published" date.
+7. `git add -A && git commit` (clear message) `&& git push origin main`. The push
    auto-deploys via Vercel. Do NOT run the Vercel CLI.
-7. If every topic is already `[x]`, make no changes — just note the queue is complete.
+8. If every topic is already `[x]`, make no changes — just note the queue is complete.
 
 ## Template — copy the structure of `chiropractic-care-after-car-accident.html` exactly
 That published post is the canonical example. Match it: the `<head>` (title, meta
