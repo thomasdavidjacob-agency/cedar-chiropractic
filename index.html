@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milwaukie Chiropractor &amp; Auto Injury Care | Cedar Chiropractic &amp; Auto Injury</title>
-<meta name="description" content="Cedar Chiropractic &amp; Auto Injury in Milwaukie, OR provides gentle chiropractic care and auto-accident &amp; personal-injury treatment. Dr. Fred Seater treats back pain, neck pain, headaches, and injury recovery. New patients welcome — (503) 653-2232.">
+<meta name="description" content="Cedar Chiropractic &amp; Auto Injury in Milwaukie, OR treats car accident injuries, whiplash, back and neck pain, and headaches. Dr. Fred Seater bills your Oregon PIP directly — and using it doesn't raise your rates. New patients welcome — (503) 653-2232.">
 <link rel="canonical" href="https://www.cedar-chiro.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cedar Chiropractic &amp; Auto Injury — Milwaukie, OR">
@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Poltawski+Nowy:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -48,7 +48,7 @@
     <div class="topbar__meta">
       <a href="tel:+15036532232">📞 (503) 653-2232</a>
       <span class="dot hide-sm">•</span>
-      <span class="hide-sm">Personal injury &amp; auto accident care</span>
+      <a class="hide-sm" href="auto-injury.html">Auto accident &amp; injury care</a>
     </div>
     <div class="topbar__meta">
       <a href="portal.html">Patient Portal</a>
@@ -68,6 +68,7 @@
     <nav>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="auto-injury.html" class="is-accent">Auto Injury</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="new-patients.html">Patients</a></li>
@@ -83,64 +84,104 @@
   </div>
 </header>
 
-<!-- ========== HERO ========== -->
-<section class="hero">
+<!-- ========== HERO (full-bleed video + navy overlay) ========== -->
+<section class="hero hero--video">
+  <video class="hero__bg" autoplay muted loop playsinline preload="metadata"
+         poster="images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
   <div class="container hero__grid">
     <div class="reveal">
-      <span class="eyebrow">Milwaukie, OR · Auto &amp; Personal Injury Care</span>
-      <h1>Move better. Feel better. <span>Live rooted.</span></h1>
-      <p class="lead">Hurt in a car accident or living with everyday pain? At Cedar Chiropractic &amp; Auto Injury, Dr. Fred Seater and our team treat the cause — not just the symptom — with gentle, personalized care and injury paperwork handled for you.</p>
+      <span class="badge-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.9 7.2 17.4l.9-5.4L4.2 8.2l5.4-.8L12 2z"/></svg>
+        Auto &amp; personal injury care &middot; Milwaukie, Oregon
+      </span>
+      <h1>Move better. Feel better.<br><span class="rotator" id="rotator">Live rooted.</span><span class="rotator__cursor" id="rotatorCursor">|</span></h1>
+      <script id="rotatorWords" type="application/json">["Live rooted.","Live stronger.","Live easier.","Live well."]</script>
+      <p class="lead">Hurt in a car accident or living with everyday pain? Dr. Fred Seater and our team treat the cause &mdash; not just the symptom &mdash; with gentle, personalized care and your injury paperwork handled for you.</p>
       <div class="hero__actions">
         <a href="https://cedarchiro.janeapp.com/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Book Online</a>
-        <a href="tel:+15036532232" class="btn btn--ghost btn--lg">📞 (503) 653-2232</a>
+        <a href="tel:+15036532232" class="btn btn--ghost btn--lg">&#128222; (503) 653-2232</a>
       </div>
       <div class="hero__trust">
-        <span class="pill">Auto &amp; injury care</span>
+        <span class="pill">PIP billed directly</span>
         <span class="pill">Most insurance accepted</span>
         <span class="pill">New patients welcome</span>
-      </div>
-    </div>
-    <div class="hero__media reveal">
-      <div class="hero__photo">
-        <img src="images/entrance.jpg" alt="Entrance to Cedar Chiropractic &amp; Auto Injury at 4141 SE Harrison St, Milwaukie, Oregon">
-      </div>
-      <div class="hero__badge">
-        <div class="ring">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <strong>Most insurance accepted</strong>
-          <small>Direct billing · flexible plans</small>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== TRUST STRIP ========== -->
-<div class="trust-strip">
-  <div class="container">
-    <span class="ts-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z" stroke-linejoin="round"/></svg> Licensed Doctors of Chiropractic</span>
-    <span class="ts-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> No referral needed</span>
-    <span class="ts-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg> Insurance &amp; auto injury billing</span>
-    <span class="ts-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg> Saturday appointments available</span>
+<!-- ========== FLOATING BOOKING CARD ========== -->
+<div class="container booking-wrap">
+  <div class="booking-card reveal">
+    <div>
+      <h3 class="mt-0">Start care this week</h3>
+      <p>Request a time online, or call and we&rsquo;ll find one that fits. Most new patients are seen within days.</p>
+    </div>
+    <div class="booking-card__item booking-card__divide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>
+      <div>
+        <strong>Book online anytime</strong>
+        <small>Request or reschedule 24/7</small>
+      </div>
+    </div>
+    <div class="booking-card__item booking-card__divide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+      <div>
+        <strong>Mon, Wed, Thu 10&ndash;6</strong>
+        <small>Tue 10&ndash;1 &middot; Sat by appointment</small>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ========== AUTO / PERSONAL INJURY ========== -->
-<section class="section section--tint" id="auto-injury">
+<!-- ========== APPROACH / THREE PILLARS ========== -->
+<section class="section section--paper">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:52px">
+      <span class="eyebrow" style="margin-inline:auto">Our Approach</span>
+      <h2>Care built around the whole person</h2>
+      <p class="lead" style="margin-inline:auto">Every plan starts with a thorough exam and an honest conversation &mdash; then moves through three stages at your pace.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar__num">01</span>
+        <h3>Ease what hurts</h3>
+        <p>First we settle the pain that brought you in, using gentle adjustments and soft-tissue therapies matched to your comfort level.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar__num">02</span>
+        <h3>Rebuild how you move</h3>
+        <p>Then we work on mobility and strength &mdash; traction, decompression, and corrective exercise aimed at the cause, not just the symptom.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar__num">03</span>
+        <h3>Keep you steady</h3>
+        <p>Finally, posture and ergonomic coaching plus a maintenance rhythm that fits your work, your sport, and your life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AUTO INJURY — NAVY BAND ========== -->
+<section class="section section--forest" id="auto-injury">
   <div class="container split">
     <div class="reveal">
-      <span class="eyebrow">Auto &amp; Personal Injury</span>
-      <h2>Injured in a car accident? Start here.</h2>
-      <p>The care you get in the first days after a crash matters — for your recovery and for your claim. We evaluate accident injuries, document everything thoroughly, and coordinate directly with your attorney and insurer so you can focus on healing.</p>
+      <span class="eyebrow" style="color:var(--gold)">Auto &amp; Personal Injury Specialty</span>
+      <h2>Hurt in a crash? Your Oregon PIP already covers this.</h2>
+      <p style="color:#cdd9e6">Oregon requires Personal Injury Protection on every auto policy, and it pays for your treatment no matter who caused the crash. Because benefits are paid on a no-fault basis, a PIP claim isn&rsquo;t treated as an at-fault claim against you. We bill it directly, so you don&rsquo;t front the cost.</p>
       <ul class="checklist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Auto accident, whiplash &amp; soft-tissue injury care</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> We bill PIP / MedPay and handle attorney liens</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Whiplash, neck, back &amp; soft-tissue injury care</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> We bill PIP / MedPay directly and handle attorney liens</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Clear documentation for your personal-injury claim</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Prompt injury evaluations for new patients</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Prompt injury evaluations &mdash; most new patients seen within days</li>
       </ul>
-      <a href="contact.html" class="btn btn--primary">Request an injury evaluation</a>
+      <p style="color:#9fb3c7;font-size:.88rem">Coverage details vary &mdash; your policy governs, so check with your agent or insurer. This isn&rsquo;t legal advice.</p>
+      <div class="hero__actions" style="margin-bottom:0">
+        <a href="auto-injury.html" class="btn btn--light">Auto injury care &rarr;</a>
+        <button type="button" class="btn btn--ghost" data-text-us style="border-color:rgba(255,255,255,.38);color:#fff">Text our front desk</button>
+      </div>
     </div>
     <div class="split__media reveal">
       <img src="images/treatment-room.jpg" alt="Chiropractic treatment room at Cedar Chiropractic &amp; Auto Injury in Milwaukie, Oregon">
@@ -149,64 +190,145 @@
 </section>
 
 <!-- ========== SERVICES ========== -->
-<section class="section" id="services">
+<section class="section section--paper" id="services">
   <div class="container">
     <div class="center reveal" style="margin-bottom:52px">
-      <span class="eyebrow">What We Treat</span>
-      <h2>Care for every stage of your recovery</h2>
-      <p class="lead">From acute pain relief to long-term wellness, we tailor every plan to your body and your goals.</p>
+      <span class="eyebrow" style="margin-inline:auto">What We Offer</span>
+      <h2>Therapies chosen for your body, not a package</h2>
+      <p class="lead" style="margin-inline:auto">From acute relief to long-term maintenance, every plan is built from the treatments that actually fit your case.</p>
     </div>
     <div class="grid grid-3">
       <a href="services.html" class="card card--link reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3v6l-4 4a4 4 0 105 5l4-4h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Spinal Adjustments</h3>
         <p>Precise, gentle adjustments to restore mobility and relieve back and neck pain.</p>
-        <span class="more">Learn more →</span>
+        <span class="more">Learn more &rarr;</span>
       </a>
       <a href="services.html" class="card card--link reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M5 8l7-4 7 4M5 16l7 4 7-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Spinal Decompression</h3>
         <p>Non-surgical relief for herniated discs, sciatica, and chronic lower-back pain.</p>
-        <span class="more">Learn more →</span>
+        <span class="more">Learn more &rarr;</span>
       </a>
       <a href="services.html" class="card card--link reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18" stroke-linecap="round"/><path d="M8 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Cervical &amp; Lumbar Traction</h3>
-        <p>Gentle traction that relieves pressure on cervical and lumbar discs — for disc herniations, sciatica, and nerve pain.</p>
-        <span class="more">Learn more →</span>
+        <p>Gentle traction that relieves pressure on cervical and lumbar discs &mdash; for disc herniations, sciatica, and nerve pain.</p>
+        <span class="more">Learn more &rarr;</span>
       </a>
       <a href="services.html" class="card card--link reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg></div>
         <h3>Ultrasound &amp; E-Stim</h3>
-        <p>Therapeutic ultrasound and electrical muscle stimulation that ease pain, relax spasms, and speed soft-tissue healing.</p>
-        <span class="more">Learn more →</span>
+        <p>Therapeutic ultrasound and electrical muscle stimulation that ease pain, relax spasms, and support soft-tissue healing.</p>
+        <span class="more">Learn more &rarr;</span>
       </a>
       <a href="services.html" class="card card--link reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke-linecap="round"/></svg></div>
-        <h3>Rehab Exercises</h3>
-        <p>Personalized corrective exercises that restore strength and stability and help keep your pain from coming back.</p>
-        <span class="more">Learn more →</span>
+        <h3>Massage &amp; Soft Tissue</h3>
+        <p>Hands-on soft-tissue work that releases tight muscles and complements your adjustments.</p>
+        <span class="more">Learn more &rarr;</span>
       </a>
       <a href="services.html" class="card card--link reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></div>
-        <h3>Auto &amp; Work Injury</h3>
-        <p>Personal-injury and workers'-comp care with documentation handled for you.</p>
-        <span class="more">Learn more →</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20v-4a8 8 0 0116 0v4" stroke-linecap="round"/><path d="M9 20v-4a3 3 0 016 0v4" stroke-linecap="round"/></svg></div>
+        <h3>Rehab &amp; Corrective Exercise</h3>
+        <p>Personalized exercises that restore strength and stability and help keep your pain from coming back.</p>
+        <span class="more">Learn more &rarr;</span>
+      </a>
+    </div>
+    <div class="center" style="margin-top:40px"><a href="services.html" class="btn btn--ghost">See all services</a></div>
+  </div>
+</section>
+
+<!-- ========== CONDITIONS ========== -->
+<section class="section section--sand" id="conditions">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:52px">
+      <span class="eyebrow" style="margin-inline:auto">What We Treat</span>
+      <h2>The complaints we see most weeks</h2>
+      <p class="lead" style="margin-inline:auto">If what&rsquo;s bothering you isn&rsquo;t listed, call us &mdash; we&rsquo;ll tell you honestly whether chiropractic is the right fit.</p>
+    </div>
+    <div class="cond-grid">
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M8 9h.01M16 9h.01M8.5 15a4 4 0 007 0" stroke-linecap="round"/></svg>
+        <h3>Headaches &amp; Migraines</h3>
+        <p>Tension and cervicogenic headaches that trace back to the neck and upper back.</p>
+      </a>
+      <a href="auto-injury.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v7M8 6l4-3 4 3" stroke-linecap="round" stroke-linejoin="round"/><rect x="5" y="10" width="14" height="11" rx="3"/></svg>
+        <h3>Neck Pain &amp; Whiplash</h3>
+        <p>Stiffness, limited turning, and post-crash neck pain that often shows up days later.</p>
+      </a>
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20" stroke-linecap="round"/><path d="M9 6h6M9 10h6M9 14h6M9 18h6" stroke-linecap="round"/></svg>
+        <h3>Low Back Pain</h3>
+        <p>Acute strains and long-running lower-back pain, including disc-related cases.</p>
+      </a>
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3v8a5 5 0 005 5h1a4 4 0 014 4v1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Sciatica &amp; Disc Pain</h3>
+        <p>Radiating leg pain, numbness, or tingling from nerve pressure in the lower spine.</p>
+      </a>
+      <a href="auto-injury.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 13l2-5a3 3 0 013-2h8a3 3 0 013 2l2 5" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="13" width="18" height="6" rx="2"/><path d="M7 19v2M17 19v2" stroke-linecap="round"/></svg>
+        <h3>Car Accident Injuries</h3>
+        <p>Soft-tissue injuries from a crash, documented properly for your claim.</p>
+      </a>
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2" stroke-linecap="round"/></svg>
+        <h3>Work Injuries</h3>
+        <p>On-the-job strains and repetitive-motion injuries, including workers&rsquo;-comp cases.</p>
+      </a>
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v6M9 21l3-7 3 7M7 11l5-2 5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Sports Injuries</h3>
+        <p>Strains, sprains, and overuse injuries, with rehab aimed at getting you back out there.</p>
+      </a>
+      <a href="services.html" class="cond reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4" stroke-linecap="round"/></svg>
+        <h3>Posture &amp; Desk Strain</h3>
+        <p>Upper-back and shoulder tension from long hours at a screen, plus ergonomic coaching.</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ========== ABOUT / WHY ========== -->
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section section--forest">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:52px">
+      <span class="eyebrow" style="color:var(--gold);margin-inline:auto">Patient Stories</span>
+      <h2>Milwaukie trusts Cedar</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Was in a ton of pain for over a month &mdash; no longer the case thanks to Dr. Fred.&rdquo;</blockquote>
+        <div class="who"><div class="avatar">TM</div><div><strong>Teri M.</strong><small>Back pain relief</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;I&rsquo;ve been seeing Dr. Fred for adjustments since 2006 &mdash; such a wonderful environment, and he always takes great care of me.&rdquo;</blockquote>
+        <div class="who"><div class="avatar">HE</div><div><strong>Holly E.</strong><small>Patient since 2006</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;I was told by a friend to go see Dr. Fred, and I&rsquo;m so happy that I did. He has been so honest with me.&rdquo;</blockquote>
+        <div class="who"><div class="avatar">ML</div><div><strong>Melissa L.</strong><small>New patient</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TEAM ========== -->
 <section class="section section--tint">
   <div class="container split split--rev">
     <div class="split__media reveal">
-      <img src="images/fred.jpg" alt="Dr. Fred Seater, DC — Cedar Chiropractic &amp; Auto Injury, Milwaukie Oregon">
+      <img src="images/fred.jpg" alt="Dr. Fred Seater, DC &mdash; Cedar Chiropractic &amp; Auto Injury, Milwaukie Oregon">
     </div>
     <div class="reveal">
-      <span class="eyebrow">Meet Dr. Fred Seater</span>
-      <h2>Care that treats you like a person, not a chart</h2>
-      <p>Dr. Fred Seater founded Cedar Chiropractic on a simple belief: real healing starts with really listening. Every plan begins with a thorough exam and an honest conversation about your goals — no cookie-cutter packages, no upselling.</p>
+      <span class="eyebrow">Meet The Team</span>
+      <h2>Two familiar faces, start to finish</h2>
+      <p>Dr. Fred Seater founded Cedar Chiropractic on a simple belief: real healing starts with really listening. You&rsquo;ll see the same doctor every visit, and Bobbie at the front desk will know your name and your insurance by the second one.</p>
       <ul class="checklist">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Experienced Doctor of Chiropractic serving Milwaukie families</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Gentle techniques suited to every age and comfort level</li>
@@ -217,113 +339,93 @@
   </div>
 </section>
 
-<!-- ========== STEPS ========== -->
-<section class="section">
+<!-- ========== VALUES ========== -->
+<section class="section section--paper">
   <div class="container">
     <div class="center reveal" style="margin-bottom:52px">
-      <span class="eyebrow">Your First Visit</span>
-      <h2>Getting started is simple</h2>
-      <p class="lead">We make your first appointment easy, unhurried, and pressure-free.</p>
+      <span class="eyebrow" style="margin-inline:auto">Why Cedar</span>
+      <h2>What you can count on here</h2>
     </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step__num">1</div>
-        <h3>Request an appointment</h3>
-        <p>Request a time online or give us a call — we'll confirm a time that works for you and answer any questions.</p>
+    <div class="values">
+      <div class="value reveal">
+        <span class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke-linejoin="round"/></svg></span>
+        <h3>Whole-person care</h3>
+        <p>We look at how you sit, sleep, work, and move &mdash; not just the spot that hurts.</p>
       </div>
-      <div class="step reveal">
-        <div class="step__num">2</div>
-        <h3>Exam &amp; consultation</h3>
-        <p>Dr. Fred listens to your history, examines you thoroughly, and explains exactly what's going on.</p>
+      <div class="value reveal">
+        <span class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Honest &amp; transparent</h3>
+        <p>No cookie-cutter packages and no upselling. If we aren&rsquo;t the right fit, we&rsquo;ll say so.</p>
       </div>
-      <div class="step reveal">
-        <div class="step__num">3</div>
-        <h3>Your personalized plan</h3>
-        <p>You leave with a clear, honest roadmap to relief — and often start treatment the same day.</p>
+      <div class="value reveal">
+        <span class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5M4 19h16" stroke-linecap="round"/><path d="M8 15l3-4 3 2 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Evidence-based</h3>
+        <p>Treatment choices grounded in current chiropractic practice, explained in plain language.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== TESTIMONIALS ========== -->
-<section class="section section--forest">
+<!-- ========== BILLING TRANSPARENCY ========== -->
+<section class="section section--sand">
   <div class="container">
     <div class="center reveal" style="margin-bottom:52px">
-      <span class="eyebrow" style="color:var(--gold)">Patient Stories</span>
-      <h2>Milwaukie trusts Cedar</h2>
+      <span class="eyebrow" style="margin-inline:auto">Insurance &amp; Payment</span>
+      <h2>You&rsquo;ll know the cost before we start</h2>
+      <p class="lead" style="margin-inline:auto">We accept most major plans and handle the billing for you. Not sure what you&rsquo;re covered for? Call and we&rsquo;ll verify your benefits at no charge.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Was in a ton of pain for over a month — no longer the case thanks to Dr. Fred."</blockquote>
-        <div class="who"><div class="avatar">TM</div><div><strong>Teri M.</strong><small>Back pain relief</small></div></div>
+    <div class="billing">
+      <div class="billing__item reveal">
+        <h3>Most major medical</h3>
+        <p>We bill your plan directly and explain your share before treatment begins.</p>
       </div>
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I've been seeing Dr. Fred for adjustments since 2006 — such a wonderful environment, and he always takes great care of me."</blockquote>
-        <div class="who"><div class="avatar">HE</div><div><strong>Holly E.</strong><small>Patient since 2006</small></div></div>
+      <div class="billing__item reveal">
+        <h3>Auto accident (PIP)</h3>
+        <p>Billed straight to your Oregon PIP, no matter who caused the crash.</p>
       </div>
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I was told by a friend to go see Dr. Fred, and I'm so happy that I did. He has been so honest with me."</blockquote>
-        <div class="who"><div class="avatar">ML</div><div><strong>Melissa L.</strong><small>New patient</small></div></div>
+      <div class="billing__item reveal">
+        <h3>Workers&rsquo; compensation</h3>
+        <p>On-the-job injury claims handled and documented for your employer and carrier.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PORTAL CALLOUT ========== -->
-<section class="section section--tint">
-  <div class="container">
-    <div class="portal-card reveal">
-      <div>
-        <span class="eyebrow">Patient Portal</span>
-        <h2 class="mt-0">Your health, at your fingertips</h2>
-        <p>Manage your care anytime through our secure online patient portal. Book and reschedule appointments, complete intake forms before you arrive, view your visit history, and pay your bill — all in one place.</p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Complete new-patient forms from home</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Request or reschedule appointments 24/7</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Securely view statements and pay online</li>
-        </ul>
-        <a href="portal.html" class="btn btn--primary">Go to Patient Portal</a>
-      </div>
-      <div class="portal-visual">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 7h6M9 11h6M9 15h4" stroke-linecap="round"/></svg>
+      <div class="billing__item reveal">
+        <h3>HSA, FSA &amp; self-pay</h3>
+        <p>Transparent self-pay rates for patients without coverage, with no surprise add-ons.</p>
       </div>
     </div>
+    <div class="center" style="margin-top:40px"><a href="new-patients.html" class="btn btn--ghost">How billing works</a></div>
   </div>
 </section>
 
 <!-- ========== BLOG PREVIEW ========== -->
-<section class="section">
+<section class="section section--paper">
   <div class="container">
     <div class="center reveal" style="margin-bottom:52px">
-      <span class="eyebrow">From the Blog</span>
-      <h2>Tips for a stronger, pain-free you</h2>
+      <span class="eyebrow" style="margin-inline:auto">From the Blog</span>
+      <h2>Practical advice between visits</h2>
     </div>
     <div class="grid grid-3">
-      <a href="blog-post.html" class="card card--link post-card reveal">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="meta">Back Health</div>
-          <h3>5 desk stretches to beat lower-back pain</h3>
-          <p>Simple movements you can do between meetings to keep your spine happy.</p>
-        </div>
-      </a>
-      <a href="blog-post.html" class="card card--link post-card reveal">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="meta">Wellness</div>
-          <h3>Is your pillow causing your headaches?</h3>
-          <p>How sleep posture affects your neck — and what to do about it.</p>
-        </div>
-      </a>
       <a href="chiropractic-care-after-car-accident.html" class="card card--link post-card reveal">
-        <div class="thumb" style="background:url('images/treatment-room.jpg') center/cover"></div>
+        <div class="thumb" style="background:url(images/treatment-room.jpg) center/cover"></div>
         <div class="body">
           <div class="meta">Auto Injury</div>
           <h3>Chiropractic care after a car accident</h3>
-          <p>Why the first days matter — and how care is paid for in Oregon.</p>
+          <p>Why the first days matter &mdash; and how care is paid for in Oregon.</p>
+        </div>
+      </a>
+      <a href="auto-injury.html" class="card card--link post-card reveal">
+        <div class="thumb" style="background:url(images/waiting-room.jpg) center/cover"></div>
+        <div class="body">
+          <div class="meta">Auto Injury</div>
+          <h3>What Oregon PIP actually covers</h3>
+          <p>Your no-fault benefits, the deadlines that matter, and how billing works.</p>
+        </div>
+      </a>
+      <a href="new-patients.html" class="card card--link post-card reveal">
+        <div class="thumb" style="background:url(images/entrance.jpg) center/cover"></div>
+        <div class="body">
+          <div class="meta">New Patients</div>
+          <h3>What to expect at your first visit</h3>
+          <p>The exam, the conversation, and why many patients start treatment same-day.</p>
         </div>
       </a>
     </div>
@@ -331,15 +433,48 @@
   </div>
 </section>
 
+<!-- ========== FAQ ========== -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:52px">
+      <span class="eyebrow" style="margin-inline:auto">Common Questions</span>
+      <h2>Good to know before you come in</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Are you accepting new patients?</summary>
+        <p>Yes &mdash; we&rsquo;re always happy to welcome new patients. Request an appointment online or call us at (503) 653-2232.</p>
+      </details>
+      <details>
+        <summary>Do I need a referral to be seen?</summary>
+        <p>No. You can book directly with us. If your plan happens to require a referral, we&rsquo;ll help you sort that out before your visit.</p>
+      </details>
+      <details>
+        <summary>Will using my PIP raise my insurance rates?</summary>
+        <p>PIP benefits are paid on a no-fault basis, so a PIP claim isn&rsquo;t treated as an at-fault claim against you. Your policy governs the details &mdash; check with your agent or insurer. This isn&rsquo;t legal advice.</p>
+      </details>
+      <details>
+        <summary>How soon after a crash should I be seen?</summary>
+        <p>Sooner is better. Adrenaline can mask soft-tissue damage for a day or two, and whiplash often surfaces later in the week. Early documentation also helps your claim.</p>
+      </details>
+      <details>
+        <summary>What should I bring to my first appointment?</summary>
+        <p>Photo ID, your insurance card, and &mdash; if you were in a crash &mdash; your claim number and adjuster&rsquo;s contact information. Completing your forms online ahead of time saves you about fifteen minutes.</p>
+      </details>
+    </div>
+    <div class="center" style="margin-top:40px"><a href="new-patients.html" class="btn btn--ghost">More new-patient answers</a></div>
+  </div>
+</section>
+
 <!-- ========== FINAL CTA ========== -->
-<section class="section">
+<section class="section section--paper">
   <div class="container">
     <div class="cta-band reveal">
       <h2>Ready to feel like yourself again?</h2>
-      <p class="lead" style="color:#cdd9ce;margin-inline:auto">Whether you're recovering from an accident or everyday aches, we're here to help. Request a visit and take the first step toward lasting relief.</p>
-      <div class="hero__actions">
+      <p class="lead" style="color:#cdd9e6;margin-inline:auto">Whether you&rsquo;re recovering from an accident or everyday aches, we&rsquo;re here to help. Request a visit and take the first step toward lasting relief.</p>
+      <div class="hero__actions" style="justify-content:center">
         <a href="https://cedarchiro.janeapp.com/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Book Online</a>
-        <a href="tel:+15036532232" class="btn btn--light btn--lg">📞 (503) 653-2232</a>
+        <a href="tel:+15036532232" class="btn btn--light btn--lg">&#128222; (503) 653-2232</a>
       </div>
     </div>
   </div>
@@ -359,6 +494,7 @@
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="auto-injury.html">Auto Injury Care</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About Dr. Fred</a></li>
           <li><a href="new-patients.html">Patients</a></li>
@@ -391,5 +527,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="widget.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/auto-injury(/)?", "destination": "/auto-injury.html", "permanent": true },
+    { "source": "/auto-accident(/)?", "destination": "/auto-injury.html", "permanent": true },
+    { "source": "/car-accident(/)?", "destination": "/auto-injury.html", "permanent": true },
+    { "source": "/personal-injury(/)?", "destination": "/auto-injury.html", "permanent": true },
+    { "source": "/whiplash(/)?", "destination": "/auto-injury.html", "permanent": true },
+    { "source": "/pip(/)?", "destination": "/auto-injury.html", "permanent": true },
     { "source": "/about-us(/)?", "destination": "/about.html", "permanent": true },
     { "source": "/our-chiropractic-team(/)?", "destination": "/about.html", "permanent": true },
     { "source": "/new-patients(/)?", "destination": "/new-patients.html", "permanent": true },

@@ -57,10 +57,54 @@
         status.textContent = 'Thank you! We received your request and will call to confirm your appointment shortly.';
       }).catch(function () {
         status.className = 'form-status err';
-        status.innerHTML = 'Sorry — something went wrong. Please call us at <a href="tel:+15035550142">(503) 555-0142</a>.';
+        status.innerHTML = 'Sorry — something went wrong. Please call us at <a href="tel:+15036532232">(503) 653-2232</a>.';
       }).finally(function () {
         if (btn) { btn.disabled = false; btn.textContent = original; }
       });
     });
+  }
+})();
+
+/* ---------- Hero headline word rotator ---------- */
+(function () {
+  var el = document.getElementById('rotator');
+  var cursor = document.getElementById('rotatorCursor');
+  var data = document.getElementById('rotatorWords');
+  if (!el || !data) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { if (cursor) cursor.style.display = 'none'; return; }
+
+  var words;
+  try { words = JSON.parse(data.textContent); } catch (e) { return; }
+  if (!Array.isArray(words) || words.length < 2) return;
+
+  var i = 0, pos = words[0].length, deleting = true;
+
+  function tick() {
+    var word = words[i];
+    if (deleting) {
+      pos--;
+      if (pos <= 0) { deleting = false; i = (i + 1) % words.length; }
+    } else {
+      pos++;
+      if (pos >= word.length) {
+        pos = word.length;
+        deleting = true;
+        el.textContent = word;
+        setTimeout(tick, 2200);
+        return;
+      }
+    }
+    el.textContent = words[i].slice(0, pos);
+    setTimeout(tick, deleting ? 45 : 85);
+  }
+
+  setTimeout(tick, 2200);
+
+  if (cursor) {
+    setInterval(function () {
+      cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+    }, 550);
   }
 })();
