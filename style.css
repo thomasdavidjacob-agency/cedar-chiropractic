@@ -637,7 +637,7 @@ body.has-dialog { overflow: hidden; }
 .hero--video { position: relative; overflow: hidden; isolation: isolate; }
 .hero--video .hero__bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: -2;
+  object-fit: cover; object-position: 22% center; z-index: -2;
 }
 .hero--video::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
