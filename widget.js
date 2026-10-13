@@ -241,7 +241,7 @@
           '<button class="modal__close" id="pipClose" type="button" aria-label="Close">&times;</button>' +
           '<div class="modal__band">' +
             '<span class="eyebrow" id="pipEyebrow">Hurt in a car accident?</span>' +
-            '<h2 id="pipTitle">Using your PIP benefits will not raise your rates</h2>' +
+            '<h2 id="pipTitle">Your PIP benefits are there to use</h2>' +
           '</div>' +
           '<div class="modal__body">' +
             '<p>Many people put off treatment after a crash because they\'re worried a claim will ' +
@@ -250,13 +250,13 @@
             'care right away.</p>' +
             '<ul class="checklist">' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
-                '<span><strong>Your premium doesn\'t go up</strong> for using the PIP benefits you already pay for.</span></li>' +
+                '<span><strong>Not an at-fault claim.</strong> PIP is no-fault coverage you already pay for.</span></li>' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
-                '<span><strong>Fault doesn\'t matter.</strong> PIP pays your treatment either way.</span></li>' +
+                '<span><strong>Fault isn\'t the question.</strong> PIP can cover your care either way.</span></li>' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
                 '<span><strong>At least $15,000</strong> in medical benefits sits on every Oregon auto policy.</span></li>' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
-                '<span><strong>We bill your PIP carrier directly</strong> — most patients start care with nothing out of pocket.</span></li>' +
+                '<span><strong>We bill your PIP carrier directly</strong>, so most patients don\'t front the cost of care.</span></li>' +
             '</ul>' +
             '<div class="modal__actions">' +
               '<button type="button" class="btn btn--primary" data-text-us>Text our front desk</button>' +
