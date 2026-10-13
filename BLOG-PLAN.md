@@ -23,7 +23,7 @@ That published post is the canonical example. Match it: the `<head>` (title, met
 description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, and a
 `BlogPosting` JSON-LD with `headline`, `description`, `author` = Organization "Cedar Chiropractic & Auto Injury" (team byline, NOT Dr. Fred),
 `datePublished` = today, `articleSection` = the cluster, `keywords`), the topbar, the nav
-(mark Blog active), the `page-hero` with eyebrow + H1 + byline `By the Cedar Chiropractic Team · <post date, e.g. Aug 12, 2026> · N min read · <a href="blog.html">Back to blog</a>`, the `<article class="section">` body, and the standard footer. Keep the same CSS classes.
+(mark Blog active), the `page-hero` with eyebrow + H1 + byline `By the Cedar Chiropractic Team · N min read · <a href="blog.html">Back to blog</a>` (**no visible dates anywhere** — posts are evergreen; the date lives only in JSON-LD `datePublished` and sitemap `lastmod`; blog.html cards show the category only, e.g. "Auto Injury"), the `<article class="section">` body, and the standard footer. Keep the same CSS classes.
 
 ## Writing rules (this is what keeps it from looking like an AI blog)
 - **Length:** 650–1100 words. Vary it post to post; don't make them all identical length/shape.
