@@ -726,6 +726,53 @@ body.has-dialog { overflow: hidden; }
 .cond h3 { font-size: 1.08rem; margin-bottom: .35em; }
 .cond p { color: var(--muted); font-size: .9rem; margin: 0; }
 
+/* ---------- Photo cards (photo on top, fading into the card surface) ----------
+   Shared by the services .card grid and the conditions .cond grid. The ::after
+   gradient blends the bottom of the photo into --cream-2 so the heading reads
+   as if it sits on the image's edge. */
+.card--photo, .cond--photo { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.card__media, .cond__media { position: relative; overflow: hidden; background: var(--sand); }
+.card__media { aspect-ratio: 16 / 10; }
+.cond__media { aspect-ratio: 3 / 2; }
+.card__media img, .cond__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.card__media::after, .cond__media::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 55%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), var(--cream-2));
+  pointer-events: none;
+}
+.card--photo:hover .card__media img, .cond--photo:hover .cond__media img { transform: scale(1.04); }
+.card__body { position: relative; margin-top: -26px; padding: 0 30px 30px; display: flex; flex-direction: column; flex: 1; }
+.card__body .more { margin-top: auto; }
+.cond__body { position: relative; margin-top: -20px; padding: 0 22px 24px; }
+.cond--photo:hover { border-color: var(--cedar); }
+
+/* "Read more" link under a services.html photo card */
+.card .read-more { display: inline-flex; gap: 6px; font-weight: 600; font-size: .92rem; color: var(--cedar); margin-top: auto; }
+.card .read-more:hover { color: var(--cedar-dark); }
+
+/* ---------- Service detail pages ---------- */
+.page-hero--photo .page-hero__media {
+  max-width: 980px; margin: 32px auto 0; border-radius: var(--radius); overflow: hidden;
+  aspect-ratio: 16 / 7; box-shadow: var(--shadow); background: var(--sand);
+}
+.page-hero--photo .page-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 620px) { .page-hero--photo .page-hero__media { aspect-ratio: 4 / 3; } }
+.article > h2:first-child { margin-top: 0; }
+.svc-related, .article .svc-related { display: grid; gap: 14px; margin: 1.4em 0; padding: 0; list-style: none; }
+@media (min-width: 640px) { .svc-related { grid-template-columns: repeat(2, 1fr); } }
+.svc-related a {
+  display: block; background: var(--cream-2); border: 1px solid var(--line); border-left: 3px solid var(--cedar);
+  border-radius: var(--radius-sm); padding: 14px 18px; color: var(--forest); font-weight: 600;
+}
+.svc-related a:hover { border-color: var(--cedar); color: var(--cedar-dark); }
+.svc-related small { display: block; color: var(--muted); font-weight: 400; font-size: .88rem; margin-top: 2px; }
+
+/* Phone glyph inside buttons — line icon in place of an emoji */
+.ico { width: 1em; height: 1em; display: inline-block; vertical-align: -.125em; margin-right: .3em; }
+.btn .ico { margin-right: 0; }
+.btn .ico { width: 18px; height: 18px; flex: none; }
+.topbar .ico { width: 14px; height: 14px; display: inline-block; vertical-align: -2px; margin-right: 4px; }
+
 /* ---------- Billing transparency ("no surprises") ---------- */
 .billing { display: grid; gap: 18px; }
 @media (min-width: 640px) { .billing { grid-template-columns: repeat(2, 1fr); } }

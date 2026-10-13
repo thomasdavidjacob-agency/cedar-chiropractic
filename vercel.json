@@ -16,6 +16,7 @@
     { "source": "/contact(/)?", "destination": "/contact.html", "permanent": true },
     { "source": "/about(/)?", "destination": "/about.html", "permanent": true },
     { "source": "/blog(/)?", "destination": "/blog.html", "permanent": true },
+    { "source": "/blog-post(.html)?", "destination": "/blog.html", "permanent": true },
     { "source": "/sitemap(/)?", "destination": "/sitemap.xml", "permanent": true },
     { "source": "/Accessibility(/)?", "destination": "/", "permanent": true }
   ],

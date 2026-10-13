@@ -21,17 +21,17 @@ publish ONE new post from the queue below, following every rule here. This file 
 ## Template — copy the structure of `chiropractic-care-after-car-accident.html` exactly
 That published post is the canonical example. Match it: the `<head>` (title, meta
 description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, and a
-`BlogPosting` JSON-LD with `headline`, `description`, `author` = "Dr. Fred Seater",
+`BlogPosting` JSON-LD with `headline`, `description`, `author` = Organization "Cedar Chiropractic & Auto Injury" (team byline, NOT Dr. Fred),
 `datePublished` = today, `articleSection` = the cluster, `keywords`), the topbar, the nav
-(mark Blog active), the `page-hero` with eyebrow + H1 + byline `By Dr. Fred Seater · <today, e.g. Aug 12, 2026> · N min read · <a href="blog.html">Back to blog</a>`, the `<article class="section">` body, and the standard footer. Keep the same CSS classes.
+(mark Blog active), the `page-hero` with eyebrow + H1 + byline `By the Cedar Chiropractic Team · <post date, e.g. Aug 12, 2026> · N min read · <a href="blog.html">Back to blog</a>`, the `<article class="section">` body, and the standard footer. Keep the same CSS classes.
 
 ## Writing rules (this is what keeps it from looking like an AI blog)
-- **Length:** 700–1000 words. Vary it post to post; don't make them all identical length/shape.
+- **Length:** 650–1100 words. Vary it post to post; don't make them all identical length/shape.
 - **Voice:** warm, plain-spoken, practical — like a real Milwaukie chiropractor talking to a
   neighbor. Vary the opening (a question, a scenario, a myth, a stat-free observation). Avoid
   formulaic "In today's fast-paced world…" AI intros and repetitive phrasing across posts.
 - **Structure:** an intro `<p class="lead">`, then 3–5 `<h2>` sections, occasional `<ul>`,
-  and one `<div class="callout"><strong>Dr. Fred's tip:</strong> …</div>` where it fits.
+  and at most one `<div class="callout"><strong>From the front desk:</strong> …</div>` (or `Worth knowing:`) where it fits. Do NOT write "Dr. Fred's tip" or put words in Fred's mouth; the voice is the Cedar team. Vary the H2 skeleton from post to post.
 - **Accuracy / YMYL:** educational only. Say "may help," "can support," "often." NEVER
   guarantee outcomes or cures. NEVER give individualized medical or legal advice — point
   readers to a consultation/exam. Don't invent statistics, credentials, or study citations.
@@ -41,26 +41,21 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
   NOT stuff or list them robotically: Milwaukie, Gladstone, Oregon City, Oak Grove, Portland.
   (Later we add West Linn, Lake Oswego.) Put the primary keyword in the title, H1, first
   paragraph, and meta description — naturally.
-- **Internal links:** link to `services.html`, the relevant service, `contact.html`, the Jane
-  booking (`https://cedarchiro.janeapp.com/`), and 1–2 related posts already published.
-- **CTA:** end with a `cta-band`. For auto-injury posts: "Request an injury evaluation" →
-  `contact.html` + phone. For other posts: "Book Online" → the Jane link + phone.
-- **Images:** use one of the existing repo photos as the featured image, rotating so they
-  don't repeat back-to-back: `images/treatment-room.jpg`, `images/waiting-room.jpg`,
-  `images/entrance.jpg` (pick whichever best fits the topic). Alt text should describe the
-  image + practice + Milwaukie.
+- **Internal links:** every post links to `auto-injury.html`, 2–4 of the service pages (`spinal-adjustments.html`, `spinal-decompression.html`, `cervical-lumbar-traction.html`, `ultrasound-e-stim.html`, `massage-soft-tissue.html`, `rehab-corrective-exercise.html`), `services.html`/`new-patients.html`/`contact.html`/`about.html` as relevant, and 1–2 related posts. Natural keyword anchors, never "click here".
+- **CTA:** end with a `cta-band`: primary "Book an Appointment" → https://cedarchiro.janeapp.com/ (target _blank rel noopener) + "Call (503) 653-2232". No emoji.
+- **Images:** each post gets its own free stock photo (Pexels/Unsplash) at `images/blog/<slug>.jpg`, ~1200px wide, inspected for text/logos/watermarks, never reused. Log the source in `images/blog/SOURCES.md`. Alt text describes what is actually in the photo.
 
 ## NAP / brand facts (use exactly)
 - Cedar Chiropractic & Auto Injury (legal: Cedar Chiropractic Physicians, LLC)
 - 4141 SE Harrison St, Milwaukie, OR 97222 · (503) 653-2232 · cedarchiro@cedar-chiro.com
-- Dr. Fred Seater, DC. Booking: https://cedarchiro.janeapp.com/
+- Dr. Fred Seater, DC (practice owner; posts are bylined to the team). Booking: https://cedarchiro.janeapp.com/
 
 ## Queue (write in this order; one per run)
 - [x] `chiropractic-care-after-car-accident` — Chiropractic Care After a Car Accident (Auto Injury) — *published 2026-08-03*
-- [ ] `whiplash-after-a-car-accident` — Whiplash After a Car Accident: Symptoms, Timeline & Treatment (Auto Injury) — kw: whiplash treatment
-- [ ] `chiropractor-after-minor-car-accident` — Do You Really Need a Chiropractor After a Minor Fender-Bender? (Auto Injury) — kw: chiropractor after minor car accident
-- [ ] `auto-injury-pip-medpay-oregon` — How Auto-Injury Care Is Paid For in Oregon (PIP & MedPay) (Auto Injury) — kw: PIP chiropractor Oregon
-- [ ] `auto-injury-documentation-claim` — Injured in a Crash? How Documentation Supports Your Claim (Auto Injury) — kw: personal injury chiropractor
+- [x] `whiplash-after-a-car-accident` — Whiplash After a Car Accident: Symptoms, Timeline & Treatment (Auto Injury) — kw: whiplash treatment — *written 2026-10-13, dated 2026-08-10*
+- [x] `chiropractor-after-minor-car-accident` — Do You Really Need a Chiropractor After a Minor Fender-Bender? (Auto Injury) — kw: chiropractor after minor car accident — *written 2026-10-13, dated 2026-08-14*
+- [x] `auto-injury-pip-medpay-oregon` — How Auto-Injury Care Is Paid For in Oregon (PIP & MedPay) (Auto Injury) — kw: PIP chiropractor Oregon — *written 2026-10-13, dated 2026-08-27*
+- [x] `auto-injury-documentation-claim` — Injured in a Crash? How Documentation Supports Your Claim (Auto Injury) — kw: personal injury chiropractor — *written 2026-10-13, dated 2026-09-24*
 - [ ] `cervical-disc-herniation` — Cervical Disc Herniation: Signs, Causes & Non-Surgical Options (Conditions) — kw: cervical disc herniation treatment
 - [ ] `sciatica-low-back-pain` — Sciatica & Low-Back Pain: What's Actually Going On (Conditions) — kw: sciatica chiropractor
 - [ ] `chiropractor-for-headaches` — The Neck–Headache Connection: Relief for Headaches & Migraines (Conditions) — kw: chiropractor for headaches
@@ -75,4 +70,19 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
 - [ ] `desk-posture-tips` — Posture at Your Desk: Small Fixes That Prevent Big Pain (Wellness) — kw: desk posture
 - [ ] `first-chiropractic-exam` — What Happens at Your First Chiropractic Exam (Wellness) — kw: chiropractic exam
 
-*(Already live and not in the queue: `blog-post.html` = "5 Desk Stretches", published 2026-07-21.)*
+**Auto-injury expansion batch (2026-10-13). Already written, do not duplicate** (the later Conditions/Therapies queue items above are different intents and still open):
+- [x] `delayed-pain-after-car-accident` — Why Does Pain Show Up Days After a Car Accident? (Auto Injury) — kw: delayed pain after car accident — *written 2026-10-13, dated 2026-08-20*
+- [x] `first-72-hours-after-car-accident` — What to Do in the First 72 Hours After a Car Accident (Auto Injury) — kw: what to do after a car accident — *written 2026-10-13, dated 2026-09-02*
+- [x] `headaches-after-car-accident` — Headaches After a Car Accident: Why They Happen and When to Worry (Auto Injury) — kw: headaches after car accident — *written 2026-10-13, dated 2026-09-08*
+- [x] `cervical-traction-decompression-whiplash-recovery` — How Traction, Decompression, and Rehab Fit Into Whiplash Recovery (Auto Injury) — kw: cervical traction whiplash — *written 2026-10-13, dated 2026-09-14*
+- [x] `chiropractor-vs-er-urgent-care-after-accident` — ER, Urgent Care, Your Doctor, or a Chiropractor: Who to See After a Crash (Auto Injury) — kw: chiropractor vs ER after car accident — *written 2026-10-13, dated 2026-09-18*
+- [x] `low-back-pain-after-car-accident` — Low-Back Pain After a Car Accident (Auto Injury) — kw: low back pain after car accident — *written 2026-10-13, dated 2026-09-29*
+- [x] `concussion-red-flags-after-car-accident` — Concussion Red Flags After a Car Accident: When to Go to the ER (Auto Injury) — kw: concussion after car accident — *written 2026-10-13, dated 2026-10-02*
+- [x] `rehab-exercises-after-car-accident` — Rehab Exercises After a Car Accident (Auto Injury) — kw: rehab exercises after car accident — *written 2026-10-13, dated 2026-10-06*
+- [x] `muscle-spasm-after-car-accident` — Muscle Spasms After a Car Accident (Auto Injury) — kw: muscle spasm after car accident — *written 2026-10-13, dated 2026-10-09*
+- [x] `attorney-and-chiropractor-after-car-accident` — Working With Your Attorney and Your Chiropractor After a Car Accident (Auto Injury) — kw: personal injury chiropractor Oregon — *written 2026-10-13, dated 2026-10-13*
+- [ ] `rear-end-collision-neck-injuries` — Rear-End Collisions and Neck Injuries (Auto Injury) — kw: rear-end collision neck injury
+- [ ] `seat-belt-airbag-injuries` — Seat Belt and Airbag Soft-Tissue Injuries (Auto Injury) — kw: seat belt injury after car accident
+- [ ] `driving-work-after-car-accident` — Getting Back to Driving and Work After a Crash (Auto Injury) — kw: back to work after car accident
+
+*(The placeholder `blog-post.html` ("5 Desk Stretches") was removed from the site on 2026-10-13. Do not recreate it.)*
