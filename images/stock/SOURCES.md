@@ -6,7 +6,7 @@ and recompressed with ffmpeg. Unsplash+ (paid) images were deliberately excluded
 
 | File | Original page | Photographer | Used for |
 |---|---|---|---|
-| crash-neck-pain.jpg | https://www.pexels.com/photo/close-up-photo-of-woman-having-a-neck-pain-7298628/ | Kindel Media (Pexels) | Homepage auto-injury navy band + services.html "Our Specialty" |
+| crash-roadside.jpg | https://www.pexels.com/photo/worried-young-woman-sitting-near-broken-automobile-at-roadside-in-countryside-4173090/ | Gustavo Fring (Pexels) | Homepage auto-injury navy band + services.html "Our Specialty" |
 | spinal-adjustment.jpg | https://unsplash.com/photos/ZzkNkbUxFMc | Julius Toltesi | Spinal Adjustments (cropped) |
 | spinal-decompression.jpg | https://unsplash.com/photos/5thrMBqG5E0 | Julius Toltesi | Spinal Decompression |
 | cervical-lumbar-traction.jpg | https://unsplash.com/photos/Nyg_gvnLr4s | Ruslan Zaplatin | Cervical & Lumbar Traction (cropped) |
