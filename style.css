@@ -711,9 +711,7 @@ body.has-dialog { overflow: hidden; }
 .ins-card__list { list-style: none; margin: 0 0 1.1em; padding: 0; display: grid; gap: 10px; }
 .ins-card__list li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink, #1d2a35); font-weight: 500; }
 .ins-card__list svg { width: 18px; height: 18px; color: var(--cedar); flex: none; margin-top: 4px; }
-.ins-card__more { display: inline-flex; gap: 6px; font-weight: 600; color: var(--cedar); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
-.ins-card__more:hover { color: var(--forest); }
-.ins-card__cta { display: flex; justify-content: center; width: 100%; margin-top: 1.3em; }
+.ins-card__cta { display: flex; justify-content: center; width: 100%; margin-top: .4em; }
 .ins-card__note { margin: .7em 0 0; color: var(--muted); font-size: .88rem; text-align: center; }
 
 /* ---------- Insurance page: carrier grid ---------- */
