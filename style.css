@@ -154,6 +154,8 @@ p { margin: 0 0 1.1em; }
   border-bottom: 1px solid var(--line);
 }
 .nav .container { display: flex; align-items: center; justify-content: space-between; min-height: var(--nav-h); gap: 20px; }
+/* Nav + top bar run wider than page content so the logo and CTAs sit out toward the edges */
+.nav .container, .topbar .container { max-width: 1440px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.28rem; color: var(--forest); font-weight: 600; letter-spacing: -.01em; }
 .brand:hover { color: var(--forest); }
 .brand__mark { width: 40px; height: auto; flex: none; }
@@ -698,7 +700,7 @@ body.has-dialog { overflow: hidden; }
 
 /* ---------- Insurance box (right column of the homepage hero) ---------- */
 .ins-card {
-  background: var(--cream-2); border: 1px solid var(--line);
+  background: var(--cream-2); border: 3px solid var(--cedar);
   border-radius: var(--radius); box-shadow: var(--shadow-lg);
   padding: clamp(24px, 3vw, 34px);
   max-width: 400px; width: 100%;
@@ -711,7 +713,8 @@ body.has-dialog { overflow: hidden; }
 .ins-card__list svg { width: 18px; height: 18px; color: var(--cedar); flex: none; margin-top: 4px; }
 .ins-card__more { display: inline-flex; gap: 6px; font-weight: 600; color: var(--cedar); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 .ins-card__more:hover { color: var(--forest); }
-.ins-card__note { margin: 1em 0 0; color: var(--muted); font-size: .88rem; }
+.ins-card__cta { display: flex; justify-content: center; width: 100%; margin-top: 1.3em; }
+.ins-card__note { margin: .7em 0 0; color: var(--muted); font-size: .88rem; text-align: center; }
 
 /* ---------- Insurance page: carrier grid ---------- */
 .ins-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
