@@ -165,11 +165,12 @@ p { margin: 0 0 1.1em; }
 .nav__links a { font-weight: 500; color: var(--ink); font-size: .96rem; white-space: nowrap; }
 .nav__links a:hover, .nav__links a.active { color: var(--cedar); }
 .nav__cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 1320px) { .nav__links { gap: 16px; } .nav__links a { font-size: .92rem; } }
 
 .nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__toggle span { display: block; width: 24px; height: 2px; background: var(--forest); margin: 5px 0; transition: .25s; }
 
-@media (max-width: 1060px) {
+@media (max-width: 1160px) {
   .nav__links, .nav__cta .btn--ghost { display: none; }
   .nav__toggle { display: block; }
   .nav__links.open {
@@ -694,6 +695,38 @@ body.has-dialog { overflow: hidden; }
 @media (min-width: 900px) {
   .booking-card__divide { border-left: 1px solid var(--line); padding-left: 26px; }
 }
+
+/* ---------- Insurance box (right column of the homepage hero) ---------- */
+.ins-card {
+  background: var(--cream-2); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  padding: clamp(24px, 3vw, 34px);
+  max-width: 400px; width: 100%;
+}
+@media (min-width: 900px) { .ins-card { justify-self: end; } }
+.ins-card .eyebrow { margin-bottom: .5em; }
+.hero--video .ins-card__title { color: var(--forest); font-size: 1.45rem; margin: 0 0 .8em; }
+.ins-card__list { list-style: none; margin: 0 0 1.1em; padding: 0; display: grid; gap: 10px; }
+.ins-card__list li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink, #1d2a35); font-weight: 500; }
+.ins-card__list svg { width: 18px; height: 18px; color: var(--cedar); flex: none; margin-top: 4px; }
+.ins-card__more { display: inline-flex; gap: 6px; font-weight: 600; color: var(--cedar); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+.ins-card__more:hover { color: var(--forest); }
+.ins-card__note { margin: 1em 0 0; color: var(--muted); font-size: .88rem; }
+
+/* ---------- Insurance page: carrier grid ---------- */
+.ins-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.ins-grid:empty { display: none; }
+.ins-plan {
+  display: block; padding: 20px 22px; text-decoration: none;
+  background: var(--cream-2); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: border-color .2s, transform .2s;
+}
+.ins-plan:hover { border-color: var(--cedar); transform: translateY(-2px); }
+.ins-plan strong { display: block; color: var(--forest); font-family: var(--serif); font-size: 1.1rem; }
+.ins-plan small { color: var(--muted); font-size: .85rem; }
+
+/* PIP pop-up: emphasized line */
+.modal__callout { background: var(--sage-100); border-left: 3px solid var(--cedar); padding: 12px 16px; border-radius: 8px; color: var(--forest); }
 
 /* ---------- Three pillars ---------- */
 .pillars { display: grid; gap: 24px; counter-reset: pillar; }

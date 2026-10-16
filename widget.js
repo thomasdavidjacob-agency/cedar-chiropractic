@@ -248,9 +248,9 @@
             'cost them later. In Oregon it works differently: Personal Injury Protection (PIP) is ' +
             'no-fault coverage already built into your auto policy, and it exists to pay for your ' +
             'care right away.</p>' +
+            '<p class="modal__callout"><strong>Using your PIP benefits is not an at-fault claim against you.</strong> ' +
+              'It\'s no-fault coverage you already pay for.</p>' +
             '<ul class="checklist">' +
-              '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
-                '<span><strong>Not an at-fault claim.</strong> PIP is no-fault coverage you already pay for.</span></li>' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
                 '<span><strong>Fault isn\'t the question.</strong> PIP can cover your care either way.</span></li>' +
               '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' +
