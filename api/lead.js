@@ -1,6 +1,9 @@
 // Cedar Chiropractic — appointment/lead handler (Vercel serverless + Resend)
-// Set RESEND_API_KEY in your Vercel project env vars before deploying.
+// Set RESEND_API_KEY and TURNSTILE_SECRET_KEY in your Vercel project env vars.
+// Spam defences live in _guard.js.
 // Update TO_EMAIL / FROM_EMAIL to the practice's real addresses.
+
+import { clientIp, rateLimited, checkFormToken, turnstileOk, hasLink, mostlyLinks, EMAIL_RE } from './_guard.js';
 
 const TO_EMAIL = 'cedarchiro@cedar-chiro.com';        // where leads are received (Fred's front desk)
 const FROM_EMAIL = 'website@send.cedar-chiro.com';   // verified Resend subdomain; keeps the root domain's mail records untouched
@@ -14,15 +17,51 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
-    const { firstName = '', lastName = '', email = '', phone = '', reason = '', newPatient = '', message = '' } = body;
+    const ip = clientIp(req);
+    if (rateLimited('lead', ip)) {
+      return res.status(429).json({ error: 'Too many requests' });
+    }
 
-    // Basic validation
+    const raw = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+    const firstName = String(raw.firstName || '').trim();
+    const lastName = String(raw.lastName || '').trim();
+    const email = String(raw.email || '').trim();
+    const phone = String(raw.phone || '').trim();
+    const reason = String(raw.reason || '').trim();
+    const newPatient = String(raw.newPatient || '').trim();
+    const message = String(raw.message || '').trim();
+
+    // Honeypot: real people never see this field. Answer 200 so bots learn nothing.
+    if (String(raw.company || '').trim()) {
+      return res.status(200).json({ ok: true });
+    }
+
+    // Time trap: the signed token says when the form was loaded.
+    const timing = checkFormToken(raw.ft);
+    if (timing === 'too-fast') return res.status(200).json({ ok: true });
+    if (timing === 'invalid') return res.status(400).json({ error: 'Form expired' });
+
+    if (!(await turnstileOk(raw['cf-turnstile-response'], ip))) {
+      return res.status(400).json({ error: 'Verification failed' });
+    }
+
+    // Validation
     if (!firstName || !lastName || !email || !phone) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailOk) return res.status(400).json({ error: 'Invalid email' });
+    if (firstName.length > 50 || lastName.length > 50 || reason.length > 60 || newPatient.length > 60 || message.length > 2000) {
+      return res.status(400).json({ error: 'Field too long' });
+    }
+    if (hasLink(firstName) || hasLink(lastName) || hasLink(reason) || hasLink(newPatient)) {
+      return res.status(400).json({ error: 'Invalid name' });
+    }
+    if (email.length > 254 || !EMAIL_RE.test(email)) return res.status(400).json({ error: 'Invalid email' });
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10 || phoneDigits.length > 11 || phone.length > 30) {
+      return res.status(400).json({ error: 'Invalid phone' });
+    }
+    // Link-stuffed messages are spam; drop them quietly.
+    if (mostlyLinks(message)) return res.status(200).json({ ok: true });
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {

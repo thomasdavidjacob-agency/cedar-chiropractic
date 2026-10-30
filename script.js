@@ -1,4 +1,84 @@
 /* Cedar Chiropractic — light interactions */
+
+/* ---------- Form spam guard (used by the contact form and the text widget) ----------
+   Fetches a signed load-time token for the server's time trap and renders a
+   Cloudflare Turnstile check into the given slot. The server (api/_guard.js) does
+   the real enforcement; this only collects what it needs. */
+window.CedarGuard = (function () {
+  var SITE_KEY = '0x4AAAAAAFsSBElEKIA58WdN';
+  var apiReady = null;
+
+  function loadTurnstile() {
+    if (!apiReady) {
+      apiReady = new Promise(function (resolve, reject) {
+        if (window.turnstile) return resolve(window.turnstile);
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true;
+        s.onload = function () { resolve(window.turnstile); };
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+    return apiReady;
+  }
+
+  function fetchToken() {
+    return fetch('/api/form-token', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (d) { return d.t || ''; })
+      .catch(function () { return ''; });
+  }
+
+  function protect(slot) {
+    var token = fetchToken();
+    var widgetId = null;
+    var answer = '';
+    var waiting = [];
+
+    function settle(value) {
+      answer = value || '';
+      waiting.splice(0).forEach(function (fn) { fn(answer); });
+    }
+
+    loadTurnstile().then(function (ts) {
+      widgetId = ts.render(slot, {
+        sitekey: SITE_KEY,
+        size: 'flexible',
+        appearance: 'interaction-only',
+        callback: settle,
+        'expired-callback': function () { answer = ''; },
+        'error-callback': function () { settle(''); }
+      });
+    }).catch(function () { settle(''); });
+
+    // Resolves once Turnstile has answered, or after 10s so a blocked script
+    // can't hang the form (the server then rejects and the visitor is told to call).
+    function turnstileAnswer() {
+      if (answer) return Promise.resolve(answer);
+      return new Promise(function (resolve) {
+        waiting.push(resolve);
+        setTimeout(function () { resolve(answer); }, 10000);
+      });
+    }
+
+    return {
+      fields: function () {
+        return Promise.all([token, turnstileAnswer()]).then(function (v) {
+          return { ft: v[0], 'cf-turnstile-response': v[1] };
+        });
+      },
+      reset: function () {
+        token = fetchToken();
+        answer = '';
+        if (window.turnstile && widgetId !== null) window.turnstile.reset(widgetId);
+      }
+    };
+  }
+
+  return { protect: protect };
+})();
+
 (function () {
   // Mobile nav toggle
   var toggle = document.getElementById('navToggle');
@@ -39,6 +119,7 @@
   var form = document.getElementById('leadForm');
   if (form) {
     var status = document.getElementById('formStatus');
+    var guard = window.CedarGuard.protect(document.getElementById('leadTurnstile'));
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
@@ -46,16 +127,21 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       status.className = 'form-status';
       var data = Object.fromEntries(new FormData(form).entries());
-      fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+      guard.fields().then(function (extra) {
+        Object.assign(data, extra);
+        return fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
       }).then(function (r) {
         if (!r.ok) throw new Error('bad response');
         form.reset();
+        guard.reset();
         status.className = 'form-status ok';
         status.textContent = 'Thank you! We received your request and will call to confirm your appointment shortly.';
       }).catch(function () {
+        guard.reset();                  // Turnstile answers are single-use
         status.className = 'form-status err';
         status.innerHTML = 'Sorry — something went wrong. Please call us at <a href="tel:+15036532232">(503) 653-2232</a>.';
       }).finally(function () {

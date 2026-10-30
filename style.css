@@ -537,6 +537,9 @@ p { margin: 0 0 1.1em; }
 @media (max-width: 420px) { .tx-form .tx-row { grid-template-columns: 1fr; } }
 .tx-form button[type=submit] { width: 100%; justify-content: center; margin-top: 2px; }
 .tx-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* Turnstile check: invisible unless Cloudflare needs the visitor to click */
+.ts-slot { margin: 4px 0 10px; }
+.ts-slot:empty { display: none; }
 
 .tx-note { font-size: .76rem; color: var(--muted); line-height: 1.5; margin: 0; }
 .tx-note a { font-weight: 600; }

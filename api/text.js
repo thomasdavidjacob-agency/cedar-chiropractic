@@ -11,9 +11,13 @@
 //   TWILIO_FROM_NUMBER   the practice's Twilio number, E.164 — e.g. +15035550123
 //   STAFF_SMS            who gets notified, comma-separated E.164 — e.g. +15035551234,+15035555678
 //   RESEND_API_KEY       (already set for /api/lead) — used for the email copy
+//   TURNSTILE_SECRET_KEY Cloudflare Turnstile secret (shared with /api/lead)
 //
 // Until the Twilio vars exist the route still succeeds and delivers by email
-// only, so the widget works from the moment it deploys.
+// only, so the widget works from the moment it deploys. Spam defences live in
+// _guard.js.
+
+import { clientIp, rateLimited, checkFormToken, turnstileOk, hasLink, mostlyLinks } from './_guard.js';
 
 const TO_EMAIL = 'cedarchiro@cedar-chiro.com';
 const FROM_EMAIL = 'website@send.cedar-chiro.com';
@@ -29,12 +33,26 @@ export default async function handler(req, res) {
   }
 
   try {
+    const ip = clientIp(req);
+    if (rateLimited('text', ip)) {
+      return res.status(429).json({ error: 'Too many requests' });
+    }
+
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
-    const { name = '', phone = '', message = '', company = '', page = '' } = body;
+    const { name = '', phone = '', message = '', company = '', page = '', ft = '' } = body;
 
     // Honeypot — bots fill hidden fields. Answer 200 so they don't learn anything.
     if (String(company).trim()) {
       return res.status(200).json({ ok: true });
+    }
+
+    // Time trap: the signed token says when the widget was opened.
+    const timing = checkFormToken(ft);
+    if (timing === 'too-fast') return res.status(200).json({ ok: true });
+    if (timing === 'invalid') return res.status(400).json({ error: 'Form expired' });
+
+    if (!(await turnstileOk(body['cf-turnstile-response'], ip))) {
+      return res.status(400).json({ error: 'Verification failed' });
     }
 
     const cleanName = String(name).trim().slice(0, MAX_NAME);
@@ -44,8 +62,15 @@ export default async function handler(req, res) {
     if (!cleanName || !cleanMessage) {
       return res.status(400).json({ error: 'Missing name or message' });
     }
+    if (hasLink(cleanName)) {
+      return res.status(400).json({ error: 'Invalid name' });
+    }
     if (!visitorNumber) {
       return res.status(400).json({ error: 'Invalid phone number' });
+    }
+    // Link-stuffed messages are spam; drop them quietly.
+    if (mostlyLinks(cleanMessage)) {
+      return res.status(200).json({ ok: true });
     }
 
     const smsResult = await notifyFrontDesk({ cleanName, cleanMessage, visitorNumber });

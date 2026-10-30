@@ -89,6 +89,7 @@
           '<textarea id="txMessage" name="message" required placeholder="I was rear-ended on Tuesday and my neck is stiff…"></textarea></div>' +
           '<div class="tx-hp" aria-hidden="true"><label for="txCompany">Company</label>' +
           '<input id="txCompany" name="company" type="text" tabindex="-1" autocomplete="off"></div>' +
+          '<div class="ts-slot" id="txTurnstile"></div>' +
           '<div class="tx-status" id="txStatus" role="status" aria-live="polite"></div>' +
           '<button type="submit" class="btn btn--primary">Send text</button>' +
           '<p class="tx-note">By sending, you agree to receive text messages from us about your ' +
@@ -109,10 +110,12 @@
   var txStatus = panel.querySelector('#txStatus');
   var txBody = panel.querySelector('#txBody');
   var panelOpen = false;
+  var guard = null;                     // spam guard starts on first open, so Turnstile only loads when needed
 
   function openPanel() {
     if (panelOpen) return;
     panelOpen = true;
+    if (!guard && window.CedarGuard) guard = window.CedarGuard.protect(panel.querySelector('#txTurnstile'));
     closeModal();                       // never stack the pop-up over the widget
     panel.hidden = false;
     launcher.hidden = true;
@@ -178,14 +181,20 @@
     txStatus.textContent = '';
     if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
-    fetch('/api/text', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+    var extra = guard ? guard.fields() : Promise.resolve({});
+    extra.then(function (fields) {
+      payload.ft = fields.ft;
+      payload['cf-turnstile-response'] = fields['cf-turnstile-response'];
+      return fetch('/api/text', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
     }).then(function (r) {
       if (!r.ok) throw new Error('bad response');
       showSent(payload.name);
     }).catch(function () {
+      if (guard) guard.reset();         // Turnstile answers are single-use
       txStatus.className = 'tx-status is-err';
       txStatus.innerHTML = 'That didn\'t go through. Please call us at <a href="tel:' +
         PHONE_TEL + '">' + PHONE_DISPLAY + '</a> and we\'ll take care of you.';
