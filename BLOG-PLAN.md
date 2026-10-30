@@ -25,6 +25,9 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
 `datePublished` = today, `articleSection` = the cluster, `keywords`), the topbar, the nav
 (mark Blog active), the `page-hero` with eyebrow + H1 + byline `By the Cedar Chiropractic Team · N min read · <a href="blog.html">Back to blog</a>` (**no visible dates anywhere** — posts are evergreen; the date lives only in JSON-LD `datePublished` and sitemap `lastmod`; blog.html cards show the category only, e.g. "Auto Injury"), the `<article class="section">` body, and the standard footer. Keep the same CSS classes.
 
+## Services Fred has NOT confirmed (2026-10-29): do not present as Cedar services
+Massage/soft-tissue therapy, sports-injury care, headache/migraine treatment, posture/ergonomic coaching. `massage-soft-tissue.html` was removed. Topics marked `[HOLD]` stay unpublished until Fred confirms; skip them. Don't describe decompression/traction equipment specifics or attorney-lien/records wording either (also pending Fred). PIP: never say it won't raise rates.
+
 ## Writing rules (this is what keeps it from looking like an AI blog)
 - **Length:** 650–1100 words. Vary it post to post; don't make them all identical length/shape.
 - **Voice:** warm, plain-spoken, practical — like a real Milwaukie chiropractor talking to a
@@ -41,13 +44,13 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
   NOT stuff or list them robotically: Milwaukie, Gladstone, Oregon City, Oak Grove, Portland.
   (Later we add West Linn, Lake Oswego.) Put the primary keyword in the title, H1, first
   paragraph, and meta description — naturally.
-- **Internal links:** every post links to `auto-injury.html`, 2–4 of the service pages (`spinal-adjustments.html`, `spinal-decompression.html`, `cervical-lumbar-traction.html`, `ultrasound-e-stim.html`, `massage-soft-tissue.html`, `rehab-corrective-exercise.html`), `services.html`/`new-patients.html`/`contact.html`/`about.html` as relevant, and 1–2 related posts. Natural keyword anchors, never "click here".
+- **Internal links:** every post links to `auto-injury.html`, 2–4 of the service pages (`spinal-adjustments.html`, `spinal-decompression.html`, `cervical-lumbar-traction.html`, `ultrasound-e-stim.html`, `rehab-corrective-exercise.html`), `insurance.html`, `services.html`/`new-patients.html`/`contact.html`/`about.html` as relevant, and 1–2 related posts. Natural keyword anchors, never "click here".
 - **CTA:** end with a `cta-band`: primary "Book an Appointment" → https://cedarchiro.janeapp.com/ (target _blank rel noopener) + "Call (503) 653-2232". No emoji.
 - **Images:** each post gets its own free stock photo (Pexels/Unsplash) at `images/blog/<slug>.jpg`, ~1200px wide, inspected for text/logos/watermarks, never reused. Log the source in `images/blog/SOURCES.md`. Alt text describes what is actually in the photo.
 
 ## NAP / brand facts (use exactly)
 - Cedar Chiropractic & Auto Injury (legal: Cedar Chiropractic Physicians, LLC)
-- 4141 SE Harrison St, Milwaukie, OR 97222 · (503) 653-2232 · cedarchiro@cedar-chiro.com
+- 4141 SE Harrison St, Milwaukie, OR 97222 · (503) 653-2232. **Never publish the email address or a mailto link**; link to contact.html instead (spam rule, 2026-10-30).
 - Dr. Fred Seater, DC (practice owner; posts are bylined to the team). Booking: https://cedarchiro.janeapp.com/
 
 ## Queue (write in this order; one per run)
@@ -56,19 +59,19 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
 - [x] `chiropractor-after-minor-car-accident` — Do You Really Need a Chiropractor After a Minor Fender-Bender? (Auto Injury) — kw: chiropractor after minor car accident — *written 2026-10-13, dated 2026-08-14*
 - [x] `auto-injury-pip-medpay-oregon` — How Auto-Injury Care Is Paid For in Oregon (PIP & MedPay) (Auto Injury) — kw: PIP chiropractor Oregon — *written 2026-10-13, dated 2026-08-27*
 - [x] `auto-injury-documentation-claim` — Injured in a Crash? How Documentation Supports Your Claim (Auto Injury) — kw: personal injury chiropractor — *written 2026-10-13, dated 2026-09-24*
-- [ ] `cervical-disc-herniation` — Cervical Disc Herniation: Signs, Causes & Non-Surgical Options (Conditions) — kw: cervical disc herniation treatment
-- [ ] `sciatica-low-back-pain` — Sciatica & Low-Back Pain: What's Actually Going On (Conditions) — kw: sciatica chiropractor
-- [ ] `chiropractor-for-headaches` — The Neck–Headache Connection: Relief for Headaches & Migraines (Conditions) — kw: chiropractor for headaches
-- [ ] `desk-job-neck-pain` — Desk-Job Neck Pain: Why It Happens and How to Fix It (Conditions) — kw: neck pain chiropractor
-- [ ] `cervical-traction` — Cervical Traction for Neck Pain & Disc Herniation: How It Works (Therapies) — kw: cervical traction
-- [ ] `lumbar-traction-spinal-decompression` — Lumbar Traction & Spinal Decompression for Low-Back Pain (Therapies) — kw: spinal decompression
-- [ ] `therapeutic-ultrasound` — Therapeutic Ultrasound in Chiropractic Care: What to Expect (Therapies) — kw: therapeutic ultrasound
-- [ ] `electrical-muscle-stimulation-estim` — Electrical Muscle Stimulation (E-Stim): How It Eases Pain (Therapies) — kw: e-stim therapy
-- [ ] `rehab-exercises-lasting-relief` — Why Rehab Exercises Are the Key to Lasting Relief (Therapies) — kw: chiropractic rehab exercises
-- [ ] `are-chiropractic-adjustments-safe` — Are Chiropractic Adjustments Safe? What to Expect on Visit One (Therapies) — kw: are chiropractic adjustments safe
-- [ ] `when-to-see-a-chiropractor` — When Should You See a Chiropractor vs. Wait It Out? (Wellness) — kw: when to see a chiropractor
-- [ ] `desk-posture-tips` — Posture at Your Desk: Small Fixes That Prevent Big Pain (Wellness) — kw: desk posture
-- [ ] `first-chiropractic-exam` — What Happens at Your First Chiropractic Exam (Wellness) — kw: chiropractic exam
+- [x] `cervical-disc-herniation` — Cervical Disc Herniation: Signs, Causes & Non-Surgical Options (Conditions) — kw: cervical disc herniation treatment — *published 2026-10-30*
+- [x] `sciatica-low-back-pain` — Sciatica & Low-Back Pain: What's Actually Going On (Conditions) — kw: sciatica chiropractor — *published 2026-10-30*
+- [HOLD] `chiropractor-for-headaches` — The Neck–Headache Connection: Relief for Headaches & Migraines (Conditions) — kw: chiropractor for headaches
+- [HOLD] `desk-job-neck-pain` — Desk-Job Neck Pain: Why It Happens and How to Fix It (Conditions) — kw: neck pain chiropractor
+- [x] `cervical-traction` — Cervical Traction for Neck Pain & Disc Herniation: How It Works (Therapies) — kw: cervical traction — *published 2026-10-30*
+- [x] `lumbar-traction-spinal-decompression` — Lumbar Traction & Spinal Decompression for Low-Back Pain (Therapies) — kw: spinal decompression — *published 2026-10-30*
+- [x] `therapeutic-ultrasound` — Therapeutic Ultrasound in Chiropractic Care: What to Expect (Therapies) — kw: therapeutic ultrasound — *published 2026-10-30*
+- [x] `electrical-muscle-stimulation-estim` — Electrical Muscle Stimulation (E-Stim): How It Eases Pain (Therapies) — kw: e-stim therapy — *published 2026-10-30*
+- [x] `rehab-exercises-lasting-relief` — Why Rehab Exercises Are the Key to Lasting Relief (Therapies) — kw: chiropractic rehab exercises — *published 2026-10-30*
+- [x] `are-chiropractic-adjustments-safe` — Are Chiropractic Adjustments Safe? What to Expect on Visit One (Therapies) — kw: are chiropractic adjustments safe — *published 2026-10-30*
+- [x] `when-to-see-a-chiropractor` — When Should You See a Chiropractor vs. Wait It Out? (Wellness) — kw: when to see a chiropractor — *published 2026-10-30*
+- [HOLD] `desk-posture-tips` — Posture at Your Desk: Small Fixes That Prevent Big Pain (Wellness) — kw: desk posture
+- [x] `first-chiropractic-exam` — What Happens at Your First Chiropractic Exam (Wellness) — kw: chiropractic exam — *published 2026-10-30*
 
 **Auto-injury expansion batch (2026-10-13). Already written, do not duplicate** (the later Conditions/Therapies queue items above are different intents and still open):
 - [x] `delayed-pain-after-car-accident` — Why Does Pain Show Up Days After a Car Accident? (Auto Injury) — kw: delayed pain after car accident — *written 2026-10-13, dated 2026-08-20*
@@ -81,8 +84,8 @@ description, canonical `https://www.cedar-chiro.com/<slug>.html`, Open Graph, an
 - [x] `rehab-exercises-after-car-accident` — Rehab Exercises After a Car Accident (Auto Injury) — kw: rehab exercises after car accident — *written 2026-10-13, dated 2026-10-06*
 - [x] `muscle-spasm-after-car-accident` — Muscle Spasms After a Car Accident (Auto Injury) — kw: muscle spasm after car accident — *written 2026-10-13, dated 2026-10-09*
 - [x] `attorney-and-chiropractor-after-car-accident` — Working With Your Attorney and Your Chiropractor After a Car Accident (Auto Injury) — kw: personal injury chiropractor Oregon — *written 2026-10-13, dated 2026-10-13*
-- [ ] `rear-end-collision-neck-injuries` — Rear-End Collisions and Neck Injuries (Auto Injury) — kw: rear-end collision neck injury
-- [ ] `seat-belt-airbag-injuries` — Seat Belt and Airbag Soft-Tissue Injuries (Auto Injury) — kw: seat belt injury after car accident
-- [ ] `driving-work-after-car-accident` — Getting Back to Driving and Work After a Crash (Auto Injury) — kw: back to work after car accident
+- [x] `rear-end-collision-neck-injuries` — Rear-End Collisions and Neck Injuries (Auto Injury) — kw: rear-end collision neck injury — *published 2026-10-30*
+- [x] `seat-belt-airbag-injuries` — Seat Belt and Airbag Soft-Tissue Injuries (Auto Injury) — kw: seat belt injury after car accident — *published 2026-10-30*
+- [x] `driving-work-after-car-accident` — Getting Back to Driving and Work After a Crash (Auto Injury) — kw: back to work after car accident — *published 2026-10-30*
 
 *(The placeholder `blog-post.html` ("5 Desk Stretches") was removed from the site on 2026-10-13. Do not recreate it.)*
