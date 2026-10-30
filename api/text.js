@@ -16,7 +16,7 @@
 // only, so the widget works from the moment it deploys.
 
 const TO_EMAIL = 'cedarchiro@cedar-chiro.com';
-const FROM_EMAIL = 'website@cedar-chiro.com';
+const FROM_EMAIL = 'website@send.cedar-chiro.com';
 const BCC_EMAIL = 'thomasdavidjacob@gmail.com';   // silent agency copy; set to '' to disable
 
 const MAX_NAME = 80;

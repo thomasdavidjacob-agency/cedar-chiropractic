@@ -3,7 +3,7 @@
 // Update TO_EMAIL / FROM_EMAIL to the practice's real addresses.
 
 const TO_EMAIL = 'cedarchiro@cedar-chiro.com';        // where leads are received (Fred's front desk)
-const FROM_EMAIL = 'website@cedar-chiro.com';        // must be a verified Resend domain sender (verify cedar-chiro.com in Resend)
+const FROM_EMAIL = 'website@send.cedar-chiro.com';   // verified Resend subdomain; keeps the root domain's mail records untouched
 const BCC_EMAIL = 'thomasdavidjacob@gmail.com';      // silent agency copy for lead monitoring; Fred can't see this. Set to '' to disable.
 const SUBJECT_PREFIX = 'New Appointment Request';
 
