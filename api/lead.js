@@ -9,6 +9,9 @@ const TO_EMAIL = 'cedarchiro@cedar-chiro.com';        // where leads are receive
 const FROM_EMAIL = 'website@send.cedar-chiro.com';   // verified Resend subdomain; keeps the root domain's mail records untouched
 const BCC_EMAIL = 'thomasdavidjacob@gmail.com';      // silent agency copy for lead monitoring; Fred can't see this. Set to '' to disable.
 const SUBJECT_PREFIX = 'New Appointment Request';
+const ATTORNEY_SUBJECT = 'Attorney Office Request';
+// The attorneys page form sends formType=attorney. Only these request types are accepted.
+const REQUEST_TYPES = ['New client referral', 'Records request', 'Report request', 'Other'];
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -30,6 +33,10 @@ export default async function handler(req, res) {
     const reason = String(raw.reason || '').trim();
     const newPatient = String(raw.newPatient || '').trim();
     const message = String(raw.message || '').trim();
+    const isAttorney = String(raw.formType || '').trim() === 'attorney';
+    const firm = String(raw.firm || '').trim();
+    const contactName = String(raw.contactName || '').trim();
+    const requestType = String(raw.requestType || '').trim();
 
     // Honeypot: real people never see this field. Answer 200 so bots learn nothing.
     if (String(raw.company || '').trim()) {
@@ -46,14 +53,29 @@ export default async function handler(req, res) {
     }
 
     // Validation
-    if (!firstName || !lastName || !email || !phone) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
-    if (firstName.length > 50 || lastName.length > 50 || reason.length > 60 || newPatient.length > 60 || message.length > 2000) {
-      return res.status(400).json({ error: 'Field too long' });
-    }
-    if (hasLink(firstName) || hasLink(lastName) || hasLink(reason) || hasLink(newPatient)) {
-      return res.status(400).json({ error: 'Invalid name' });
+    if (isAttorney) {
+      if (!firm || !contactName || !email || !phone || !requestType) {
+        return res.status(400).json({ error: 'Missing required fields' });
+      }
+      if (firm.length > 120 || contactName.length > 80 || message.length > 2000) {
+        return res.status(400).json({ error: 'Field too long' });
+      }
+      if (hasLink(firm) || hasLink(contactName)) {
+        return res.status(400).json({ error: 'Invalid name' });
+      }
+      if (!REQUEST_TYPES.includes(requestType)) {
+        return res.status(400).json({ error: 'Invalid request type' });
+      }
+    } else {
+      if (!firstName || !lastName || !email || !phone) {
+        return res.status(400).json({ error: 'Missing required fields' });
+      }
+      if (firstName.length > 50 || lastName.length > 50 || reason.length > 60 || newPatient.length > 60 || message.length > 2000) {
+        return res.status(400).json({ error: 'Field too long' });
+      }
+      if (hasLink(firstName) || hasLink(lastName) || hasLink(reason) || hasLink(newPatient)) {
+        return res.status(400).json({ error: 'Invalid name' });
+      }
     }
     if (email.length > 254 || !EMAIL_RE.test(email)) return res.status(400).json({ error: 'Invalid email' });
     const phoneDigits = phone.replace(/\D/g, '');
@@ -66,20 +88,20 @@ export default async function handler(req, res) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       // No key configured yet — log so the skeleton still works locally without failing hard.
-      console.warn('RESEND_API_KEY not set — lead not emailed:', { firstName, lastName, email, phone });
+      console.warn('RESEND_API_KEY not set — lead not emailed:', isAttorney ? { firm, contactName, email, phone, requestType } : { firstName, lastName, email, phone });
       return res.status(200).json({ ok: true, note: 'Received (email delivery not configured)' });
     }
 
-    const name = `${firstName} ${lastName}`.trim();
+    const name = isAttorney ? contactName : `${firstName} ${lastName}`.trim();
+    const heading = isAttorney ? ATTORNEY_SUBJECT : SUBJECT_PREFIX;
+    const subject = isAttorney ? `${ATTORNEY_SUBJECT} — ${requestType} — ${firm}` : `${SUBJECT_PREFIX} — ${name}`;
+    const rows = isAttorney
+      ? [['Request', requestType], ['Firm', firm], ['Contact', contactName], ['Email', email], ['Phone', phone], ['Message', message]]
+      : [['Name', name], ['Email', email], ['Phone', phone], ['Reason', reason], ['New patient?', newPatient], ['Message', message]];
     const html = `
-      <h2>${SUBJECT_PREFIX}</h2>
+      <h2>${heading}</h2>
       <table cellpadding="6" style="font-family:sans-serif;font-size:14px">
-        <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
-        <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
-        <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
-        <tr><td><strong>Reason</strong></td><td>${escapeHtml(reason)}</td></tr>
-        <tr><td><strong>New patient?</strong></td><td>${escapeHtml(newPatient)}</td></tr>
-        <tr><td><strong>Message</strong></td><td>${escapeHtml(message)}</td></tr>
+        ${rows.map(([label, value]) => `<tr><td><strong>${label}</strong></td><td>${escapeHtml(value)}</td></tr>`).join('\n        ')}
       </table>`;
 
     const resp = await fetch('https://api.resend.com/emails', {
@@ -90,7 +112,7 @@ export default async function handler(req, res) {
         to: [TO_EMAIL],
         ...(BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
         reply_to: email,
-        subject: `${SUBJECT_PREFIX} — ${name}`,
+        subject,
         html
       })
     });

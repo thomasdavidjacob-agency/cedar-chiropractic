@@ -19,7 +19,7 @@
   var POPUP_MIN_DWELL_MS = 7000; // floor before the scroll trigger may fire
 
   // Utility pages where an insurance pop-up would just be in the way.
-  var POPUP_SKIP = ['privacy.html', 'review.html', 'portal.html'];
+  var POPUP_SKIP = ['privacy.html', 'review.html', 'portal.html', 'attorneys.html'];
 
   var reduceMotion = window.matchMedia
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches

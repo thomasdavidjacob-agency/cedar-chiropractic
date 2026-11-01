@@ -115,11 +115,19 @@ window.CedarGuard = (function () {
     els.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // Lead / appointment form (progressive enhancement over Resend endpoint)
-  var form = document.getElementById('leadForm');
-  if (form) {
-    var status = document.getElementById('formStatus');
-    var guard = window.CedarGuard.protect(document.getElementById('leadTurnstile'));
+  // Lead forms (progressive enhancement over the Resend endpoint). The contact page's
+  // appointment form and the attorneys page's office form both post to /api/lead
+  // through the same spam guard; formType tells the server which one it is.
+  wireLeadForm('leadForm', 'formStatus', 'leadTurnstile',
+    'Thank you! We received your request and will call to confirm your appointment shortly.');
+  wireLeadForm('attorneyForm', 'attorneyStatus', 'attorneyTurnstile',
+    'Thank you. Your request reached our front desk, and we will follow up with your office.');
+
+  function wireLeadForm(formId, statusId, slotId, okText) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    var status = document.getElementById(statusId);
+    var guard = window.CedarGuard.protect(document.getElementById(slotId));
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
@@ -139,7 +147,7 @@ window.CedarGuard = (function () {
         form.reset();
         guard.reset();
         status.className = 'form-status ok';
-        status.textContent = 'Thank you! We received your request and will call to confirm your appointment shortly.';
+        status.textContent = okText;
       }).catch(function () {
         guard.reset();                  // Turnstile answers are single-use
         status.className = 'form-status err';
