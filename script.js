@@ -194,3 +194,29 @@ window.CedarGuard = (function () {
     }, 550);
   }
 })();
+
+/* ---------- Google rating badges ----------
+   THE ONE PLACE TO UPDATE THE GOOGLE RATING. Once a month, check the Google
+   Business Profile and change these two numbers. Every badge on every page (the
+   homepage review panel, the hero badges and the footer) reads them from here.
+   Elements with data-g-text get their wording from that template ({rating},
+   {count}); [data-g-stars] rows dim any star the rating doesn't reach. Without JS
+   the badges fall back to plain "Google reviews" wording, never a stale number.
+   Do not add Review / AggregateRating schema for this: Google gives a LocalBusiness
+   no stars for self-serving reviews, and it adds compliance risk. */
+(function () {
+  var GOOGLE = { rating: 5.0, count: 18 };
+
+  var rating = GOOGLE.rating.toFixed(1);
+  document.querySelectorAll('[data-g-text]').forEach(function (el) {
+    el.textContent = el.getAttribute('data-g-text')
+      .replace('{rating}', rating)
+      .replace('{count}', GOOGLE.count);
+  });
+  document.querySelectorAll('[data-g-stars]').forEach(function (row) {
+    row.querySelectorAll('svg').forEach(function (star, i) {
+      // A star shows lit only once the rating is within a quarter of it, so 4.7 shows four.
+      star.classList.toggle('is-off', GOOGLE.rating < i + 0.75);
+    });
+  });
+})();

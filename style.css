@@ -865,3 +865,46 @@ body.has-dialog { overflow: hidden; }
   .btn { white-space: normal; }
   .btn--lg { font-size: .95rem; padding: .85em 1.25em; }
 }
+
+/* ---------- Google rating badges + homepage review panel ----------
+   Text and star states are filled by the "Google rating badges" block in script.js.
+   Stars are decorative (aria-hidden); the text beside them carries the rating. */
+.g-stars { display: inline-flex; gap: 2px; color: var(--clay); flex: none; line-height: 0; }
+.g-stars svg { width: 14px; height: 14px; fill: currentColor; }
+.g-stars svg.is-off { opacity: .28; }
+.g-stars--lg { gap: 4px; }
+.g-stars--lg svg { width: 24px; height: 24px; }
+.g-mark { width: 16px; height: 16px; flex: none; }
+
+.g-badge {
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px 8px;
+  color: var(--forest); font-size: .88rem; font-weight: 600; line-height: 1.3;
+}
+.g-badge:hover .g-badge__text { text-decoration: underline; text-underline-offset: 3px; }
+.ins-card__rating { margin: 1em 0 0; padding-top: 1em; border-top: 1px solid var(--line); text-align: center; }
+.page-hero__rating { margin: 18px 0 0; }
+.footer__rating { margin-top: 6px; }
+.footer .g-badge { color: #dbe6dc; font-weight: 500; font-size: .9rem; }
+.footer .g-badge:hover { color: #fff; }
+
+.g-panel {
+  max-width: 760px; margin-inline: auto; text-align: center;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius); padding: clamp(26px, 4.5vw, 46px);
+}
+.g-panel__score { display: inline-flex; align-items: center; gap: 18px; text-align: left; margin-bottom: 22px; }
+.g-panel__mark {
+  width: 56px; height: 56px; border-radius: 50%; background: #fff; flex: none;
+  display: grid; place-items: center;
+}
+.g-panel__mark .g-mark { width: 28px; height: 28px; }
+.g-panel__rating { margin: 6px 0 0; font-family: var(--serif); font-size: 1.55rem; line-height: 1.15; color: #fff; }
+.g-panel__count { margin: 2px 0 0; font-size: .95rem; color: #b9c8ba; }
+.g-panel__lead { max-width: 36rem; margin: 0 auto 26px; color: #eaf1ea; }
+.g-panel__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.g-panel .btn--ghost { border-color: rgba(255,255,255,.38); color: #fff; }
+.g-panel .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.12); color: #fff; }
+@media (max-width: 420px) {
+  .g-panel__score { flex-direction: column; text-align: center; gap: 12px; }
+  .g-panel__actions .btn { width: 100%; justify-content: center; }
+}

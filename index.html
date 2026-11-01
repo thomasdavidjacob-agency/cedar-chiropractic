@@ -122,6 +122,7 @@
       </ul>
       <a href="insurance.html" class="btn btn--primary ins-card__cta">Complete Insurance List</a>
       <p class="ins-card__note">Free benefits check &middot; (503) 653-2232</p>
+      <p class="ins-card__rating"><a class="g-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJZ73nkjt1lVQRPp-jUIGLud8" target="_blank" rel="noopener"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="g-stars" data-g-stars aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><span class="g-badge__text" data-g-text="{rating} &middot; {count} Google reviews">Google reviews</span></a></p>
     </aside>
   </div>
 </section>
@@ -306,28 +307,30 @@
   </div>
 </section>
 
-<!-- ========== TESTIMONIALS ========== -->
+<!-- ========== GOOGLE REVIEWS ==========
+     No patient names or quotes here until each patient gives written permission
+     (vault: Research/Cedar - Testimonial Rules Oregon). The rating and count are NOT
+     typed into this page: they live in ONE place, the GOOGLE object in the
+     "Google rating badges" block of script.js. No Review/AggregateRating schema, on purpose. -->
 <section class="section section--forest">
   <div class="container">
-    <div class="center reveal" style="margin-bottom:52px">
-      <span class="eyebrow" style="color:var(--gold);margin-inline:auto">Patient Stories</span>
-      <h2>Milwaukie trusts Cedar</h2>
+    <div class="center reveal" style="margin-bottom:40px">
+      <span class="eyebrow" style="color:var(--gold);margin-inline:auto">Google Reviews</span>
+      <h2>What patients say on Google</h2>
     </div>
-    <div class="grid grid-3">
-      <div class="quote reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;Was in a ton of pain for over a month &mdash; no longer the case thanks to Dr. Fred.&rdquo;</blockquote>
-        <div class="who"><div class="avatar">TM</div><div><strong>Teri M.</strong><small>Back pain relief</small></div></div>
+    <div class="g-panel reveal">
+      <div class="g-panel__score">
+        <span class="g-panel__mark"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+        <div>
+          <span class="g-stars g-stars--lg" data-g-stars aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span>
+          <p class="g-panel__rating" data-g-text="{rating} on Google">Rated on Google</p>
+          <p class="g-panel__count" data-g-text="{count} Google reviews">Google reviews</p>
+        </div>
       </div>
-      <div class="quote reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;I&rsquo;ve been seeing Dr. Fred for adjustments since 2006 &mdash; such a wonderful environment, and he always takes great care of me.&rdquo;</blockquote>
-        <div class="who"><div class="avatar">HE</div><div><strong>Holly E.</strong><small>Patient since 2006</small></div></div>
-      </div>
-      <div class="quote reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;I was told by a friend to go see Dr. Fred, and I&rsquo;m so happy that I did. He has been so honest with me.&rdquo;</blockquote>
-        <div class="who"><div class="avatar">ML</div><div><strong>Melissa L.</strong><small>New patient</small></div></div>
+      <p class="g-panel__lead">Our reviews are written by patients on Google, in their own words. We don&rsquo;t edit them or choose which ones appear, so the full list is the place to read them. If you&rsquo;ve been in to see us, we&rsquo;d be grateful to hear how your visit went.</p>
+      <div class="g-panel__actions">
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJZ73nkjt1lVQRPp-jUIGLud8" target="_blank" rel="noopener" class="btn btn--primary">Read our Google reviews</a>
+        <a href="review.html" class="btn btn--ghost">Leave a review</a>
       </div>
     </div>
   </div>
@@ -504,6 +507,7 @@
         </div>
         <p>Gentle, whole-person chiropractic and auto-injury care in Milwaukie, Oregon. Helping you move, feel, and live better.</p>
         <p class="footer__social"><a href="https://www.facebook.com/CedarChiropracticPhysicians/" target="_blank" rel="noopener">Facebook</a> &nbsp;·&nbsp; <a href="https://www.google.com/maps/place/Cedar+Chiropractic+Physicians/@45.4468383,-122.6219909,17z" target="_blank" rel="noopener">Google Reviews</a></p>
+        <p class="footer__rating"><a class="g-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJZ73nkjt1lVQRPp-jUIGLud8" target="_blank" rel="noopener"><span class="g-stars" data-g-stars aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><span class="g-badge__text" data-g-text="{rating} &middot; {count} Google reviews">Google reviews</span></a></p>
       </div>
       <div>
         <h4>Explore</h4>
