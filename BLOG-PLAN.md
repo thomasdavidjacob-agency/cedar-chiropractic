@@ -61,8 +61,8 @@ Massage/soft-tissue therapy, sports-injury care, headache/migraine treatment, po
 - [x] `auto-injury-documentation-claim` — Injured in a Crash? How Documentation Supports Your Claim (Auto Injury) — kw: personal injury chiropractor — *written 2026-10-13, dated 2026-09-24*
 - [x] `cervical-disc-herniation` — Cervical Disc Herniation: Signs, Causes & Non-Surgical Options (Conditions) — kw: cervical disc herniation treatment — *published 2026-10-30*
 - [x] `sciatica-low-back-pain` — Sciatica & Low-Back Pain: What's Actually Going On (Conditions) — kw: sciatica chiropractor — *published 2026-10-30*
-- [HOLD] `chiropractor-for-headaches` — The Neck–Headache Connection: Relief for Headaches & Migraines (Conditions) — kw: chiropractor for headaches
-- [HOLD] `desk-job-neck-pain` — Desk-Job Neck Pain: Why It Happens and How to Fix It (Conditions) — kw: neck pain chiropractor
+- [x] `chiropractor-for-headaches` — The Neck–Headache Connection: Relief for Headaches & Migraines (Conditions) — kw: chiropractor for headaches — *written 2026-11-14 (approved by Dr. Fred 2026-11-05), dated 2026-11-14*
+- [x] `desk-job-neck-pain` — Desk-Job Neck Pain: Why It Happens and How to Fix It (Conditions) — kw: neck pain chiropractor — *written 2026-11-14 (approved by Dr. Fred 2026-11-05), dated 2026-11-17*
 - [x] `cervical-traction` — Cervical Traction for Neck Pain & Disc Herniation: How It Works (Therapies) — kw: cervical traction — *published 2026-10-30*
 - [x] `lumbar-traction-spinal-decompression` — Lumbar Traction & Spinal Decompression for Low-Back Pain (Therapies) — kw: spinal decompression — *published 2026-10-30*
 - [x] `therapeutic-ultrasound` — Therapeutic Ultrasound in Chiropractic Care: What to Expect (Therapies) — kw: therapeutic ultrasound — *published 2026-10-30*
@@ -70,7 +70,7 @@ Massage/soft-tissue therapy, sports-injury care, headache/migraine treatment, po
 - [x] `rehab-exercises-lasting-relief` — Why Rehab Exercises Are the Key to Lasting Relief (Therapies) — kw: chiropractic rehab exercises — *published 2026-10-30*
 - [x] `are-chiropractic-adjustments-safe` — Are Chiropractic Adjustments Safe? What to Expect on Visit One (Therapies) — kw: are chiropractic adjustments safe — *published 2026-10-30*
 - [x] `when-to-see-a-chiropractor` — When Should You See a Chiropractor vs. Wait It Out? (Wellness) — kw: when to see a chiropractor — *published 2026-10-30*
-- [HOLD] `desk-posture-tips` — Posture at Your Desk: Small Fixes That Prevent Big Pain (Wellness) — kw: desk posture
+- [x] `desk-posture-tips` — Posture at Your Desk: Small Fixes That Prevent Big Pain (Wellness) — kw: desk posture — *written 2026-11-14 (approved by Dr. Fred 2026-11-05), dated 2026-11-19*
 - [x] `first-chiropractic-exam` — What Happens at Your First Chiropractic Exam (Wellness) — kw: chiropractic exam — *published 2026-10-30*
 
 **Auto-injury expansion batch (2026-10-13). Already written, do not duplicate** (the later Conditions/Therapies queue items above are different intents and still open):

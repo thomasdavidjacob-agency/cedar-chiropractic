@@ -20,5 +20,9 @@ Page URL pattern: https://www.pexels.com/photo/<id>/
 | rehab-exercises-after-car-accident.jpg | 4506166 |
 | muscle-spasm-after-car-accident.jpg | 7298867 |
 | attorney-and-chiropractor-after-car-accident.jpg | 7792841 |
+| chiropractor-for-headaches.jpg | 4153230 (cropped to 16:9) |
+| desk-job-neck-pain.jpg | 8428053 |
+| desk-posture-tips.jpg | 1586996 (cropped to 16:9) |
 
+Rejected on inspection (2026-11-14, Apple logo visible): 6345340.
 Rejected on inspection (visible text, logos, or signage): 6442699, 16114745, 7734574, 7735621, 7731335, 13811143, 29509515, 6170766, 4517056, 14607283.
