@@ -18,6 +18,9 @@
   <url><loc>https://www.cedar-chiro.com/blog.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
   <!-- Blog posts (newest first; the blog routine appends new posts here) -->
+  <url><loc>https://www.cedar-chiro.com/desk-posture-tips.html</loc><lastmod>2026-11-14</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cedar-chiro.com/desk-job-neck-pain.html</loc><lastmod>2026-11-14</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cedar-chiro.com/chiropractor-for-headaches.html</loc><lastmod>2026-11-14</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cedar-chiro.com/rear-end-collision-neck-injuries.html</loc><lastmod>2026-10-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cedar-chiro.com/seat-belt-airbag-injuries.html</loc><lastmod>2026-10-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cedar-chiro.com/driving-work-after-car-accident.html</loc><lastmod>2026-10-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
