@@ -339,4 +339,9 @@
     window.setTimeout(fire, POPUP_DELAY_MS);
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+  /* 3. CeCe, the patient assistant (cece.js), loaded once the page is ready */
+  var cc = document.createElement("script");
+  cc.src = "cece.js";
+  cc.defer = true;
+  document.body.appendChild(cc);
 })();
