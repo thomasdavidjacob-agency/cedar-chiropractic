@@ -165,6 +165,22 @@
       .map(function (w) { return w.length > 4 ? w.replace(/(ing|ed|es|s)$/, '') : w; });
   }
   ANSWERS.forEach(function (x) { x.keys = words(x.k + ' ' + x.q); });
+  // Phrases that beat keyword scoring.
+  var PHRASES = [
+    [/where.*(you|office|clinic|located|cedar)|address|directions?/i, 'where'],
+    [/how much|costs?|prices?|copay/i, 'cost'],
+    [/(open|close|closed|hours)/i, 'hours'],
+    [/referral/i, 'referral'],
+    [/(rates?|premiums?).*(up|raise|increase|higher)/i, 'piprates']
+  ];
+  function phrase(text) {
+    for (var i = 0; i < PHRASES.length; i++) {
+      if (PHRASES[i][0].test(text)) {
+        for (var j = 0; j < ANSWERS.length; j++) if (ANSWERS[j].id === PHRASES[i][1]) return ANSWERS[j];
+      }
+    }
+    return null;
+  }
   function match(text) {
     var w = words(text);
     if (!w.length) return null;
@@ -343,7 +359,7 @@
       bookStart();
       return;
     }
-    var x = match(text);
+    var x = phrase(text) || match(text);
     if (x) { answer(x); return; }
     say('I can only answer general questions about the office, and I can\'t give medical advice. For anything else, the front desk is happy to help: call ' + call + ' or send a text.');
     actions([callBtn(), textBtn()]);
