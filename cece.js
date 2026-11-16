@@ -184,13 +184,13 @@
 
   var launcher = el(
     '<button class="cc-launch" type="button" aria-expanded="false" aria-controls="ccPanel">' +
-      '<span class="cc-avatar cc-avatar--sm" aria-hidden="true">CC</span><span>Ask CeCe</span>' +
+      '<img class="cc-avatar cc-avatar--sm" src="images/cece/cece.webp" alt="" width="42" height="42"><span>Ask CeCe</span>' +
     '</button>'
   );
   var panel = el(
     '<div class="cc-panel" id="ccPanel" role="dialog" aria-modal="false" aria-labelledby="ccTitle" hidden>' +
       '<div class="cc-head">' +
-        '<span class="cc-avatar" aria-hidden="true">CC</span>' +
+        '<img class="cc-avatar" src="images/cece/cece.webp" alt="" width="42" height="42">' +
         '<div><strong id="ccTitle">CeCe</strong><small>Cedar Chiropractic\'s patient assistant</small></div>' +
         '<button class="cc-close" type="button" aria-label="Close">&times;</button>' +
       '</div>' +
