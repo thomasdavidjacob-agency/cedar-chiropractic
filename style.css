@@ -908,3 +908,89 @@ body.has-dialog { overflow: hidden; }
   .g-panel__score { flex-direction: column; text-align: center; gap: 12px; }
   .g-panel__actions .btn { width: 100%; justify-content: center; }
 }
+
+/* =========================================================
+   CeCe — patient assistant (cece.js)
+   ========================================================= */
+.cc-launch {
+  position: fixed; right: 20px; bottom: 86px; z-index: 90;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--forest); color: #fff; border: 0; cursor: pointer;
+  font-family: var(--sans); font-size: .95rem; font-weight: 600;
+  padding: 8px 18px 8px 8px; border-radius: var(--radius-pill);
+  box-shadow: 0 12px 30px rgba(10,50,90,.32);
+  transition: transform .2s ease, background .2s ease;
+}
+.cc-launch:hover { background: var(--forest-2); transform: translateY(-2px); }
+.cc-launch[hidden], .cc-launch.is-tucked { display: none; }
+.cc-avatar {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  object-fit: cover; background: var(--sage);
+  border: 2px solid rgba(255,255,255,.6);
+}
+.cc-avatar--sm { width: 34px; height: 34px; }
+
+.cc-panel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 96;
+  width: min(390px, calc(100vw - 40px)); height: min(620px, calc(100vh - 40px));
+  background: var(--cream-2); border: 1px solid var(--line);
+  border-radius: 22px; box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column; overflow: hidden;
+  transform: translateY(14px) scale(.98); opacity: 0;
+  transition: transform .24s ease, opacity .24s ease;
+}
+.cc-panel[hidden] { display: none; }
+.cc-panel.is-open { transform: none; opacity: 1; }
+.cc-head {
+  background: linear-gradient(150deg, var(--forest), var(--forest-2));
+  color: #fff; padding: 16px 20px; display: flex; gap: 12px; align-items: center; flex: none;
+}
+.cc-head strong { display: block; font-family: var(--serif); font-size: 1.12rem; }
+.cc-head small { display: block; color: #c3d3c5; font-size: .82rem; margin-top: 1px; }
+.cc-close {
+  margin-left: auto; background: none; border: 0; cursor: pointer;
+  color: #c3d3c5; font-size: 1.6rem; line-height: 1; padding: 0 2px; align-self: flex-start;
+}
+.cc-close:hover { color: #fff; }
+
+.cc-log { flex: 1; overflow-y: auto; padding: 18px 16px 8px; display: flex; flex-direction: column; gap: 10px; }
+.cc-msg { max-width: 88%; font-size: .94rem; line-height: 1.5; padding: 11px 14px; color: var(--ink); }
+.cc-msg--bot { align-self: flex-start; background: var(--sage-50); border: 1px solid var(--sage-100); border-radius: 16px 16px 16px 4px; }
+.cc-msg--me { align-self: flex-end; background: var(--forest); color: #fff; border-radius: 16px 16px 4px 16px; }
+.cc-msg a { font-weight: 600; }
+.cc-msg--me a { color: #fff; }
+.cc-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 11px; }
+.cc-btn {
+  display: inline-flex; align-items: center; gap: 5px; text-decoration: none; cursor: pointer;
+  font: 600 .86rem var(--sans); color: var(--forest); background: #fff;
+  border: 1px solid var(--line-strong); border-radius: var(--radius-pill); padding: 8px 14px;
+}
+.cc-btn:hover { border-color: var(--cedar); color: var(--cedar-dark); }
+.cc-btn--primary { background: var(--cedar); border-color: var(--cedar); color: #fff; }
+.cc-btn--primary:hover { background: var(--cedar-dark); color: #fff; }
+.cc-chips { display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; }
+.cc-chip {
+  font: 600 .86rem var(--sans); color: var(--cedar-dark); background: #fff; cursor: pointer;
+  border: 1.5px solid var(--cedar); border-radius: var(--radius-pill); padding: 7px 13px; text-align: left;
+}
+.cc-chip:hover, .cc-chip:focus-visible { background: var(--cedar); color: #fff; outline: 0; }
+
+.cc-input { display: flex; gap: 8px; padding: 10px 14px; border-top: 1px solid var(--line); flex: none; }
+.cc-input input {
+  flex: 1; min-width: 0; font: inherit; font-size: 16px; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 10px 15px;
+}
+.cc-input input:focus { outline: 0; border-color: var(--cedar); box-shadow: 0 0 0 3px rgba(63,115,88,.14); }
+.cc-send {
+  width: 42px; height: 42px; flex: none; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--cedar); color: #fff; display: grid; place-items: center;
+}
+.cc-send svg { width: 20px; height: 20px; }
+.cc-foot { margin: 0; padding: 0 16px 12px; font-size: .72rem; line-height: 1.45; color: var(--muted); flex: none; }
+.cc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+@media (max-width: 560px) {
+  .cc-launch { right: 14px; bottom: 76px; }
+  .cc-panel { right: 8px; left: 8px; bottom: 8px; width: auto; height: calc(100dvh - 16px); }
+}
+@media (prefers-reduced-motion: reduce) { .cc-panel, .cc-launch { transition: none; } }
