@@ -167,11 +167,11 @@
   ANSWERS.forEach(function (x) { x.keys = words(x.k + ' ' + x.q); });
   // Phrases that beat keyword scoring.
   var PHRASES = [
-    [/where.*(you|office|clinic|located|cedar)|address|directions?/i, 'where'],
-    [/how much|costs?|prices?|copay/i, 'cost'],
-    [/(open|close|closed|hours)/i, 'hours'],
-    [/referral/i, 'referral'],
-    [/(rates?|premiums?).*(up|raise|increase|higher)/i, 'piprates']
+    [/\bwhere\b.*\b(you|office|clinic|located|cedar)\b|\baddress\b|\bdirections?\b/i, 'where'],
+    [/\bhow much\b|\bcosts?\b|\bprices?\b|\bcopay\b/i, 'cost'],
+    [/\b(open|close|closed|hours)\b/i, 'hours'],
+    [/\breferral\b/i, 'referral'],
+    [/\b(rates?|premiums?)\b.*\b(up|raise|increase|higher)\b/i, 'piprates']
   ];
   function phrase(text) {
     for (var i = 0; i < PHRASES.length; i++) {
